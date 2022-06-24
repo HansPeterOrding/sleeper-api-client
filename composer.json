@@ -1,0 +1,26 @@
+{
+  "name": "hans-peter-ording/sleeper-api-client",
+  "type": "library",
+  "description": "Client library to consume the sleeper API (https://docs.sleeper.app/) and transform results into data transfer objects.",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4",
+    "symfony/serializer": "6.2.x-dev",
+    "psr/http-client": "^1.0@dev",
+    "php-http/discovery": "^1.9@dev",
+    "php-http/logger-plugin": "^1.2@dev"
+  },
+  "require-dev": {},
+  "autoload": {
+    "psr-4": {
+      "HansPeterOrding\\SleeperApiClient\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": { "HansPeterOrding\\SleeperApiClient\\Tests\\": "tests/" }
+  },
+  "minimum-stability": "dev"
+}
