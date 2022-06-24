@@ -19,10 +19,10 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 class SleeperApiClientFactory
 {
+    public const BASE_URI = 'https://api.sleeper.app/';
     public const SPORTS_NFL = 'nfl';
 
     public function getSleeperApiClient(
-        string $baseUri,
         string $sports = self::SPORTS_NFL,
         ?ClientInterface $client = null,
         ?LoggerInterface $logger = null
@@ -53,6 +53,6 @@ class SleeperApiClientFactory
          */
         $serializer = new Serializer();
 
-        return new SleeperApiClient($baseUri, $sports, $pluginClient, $uriFactory, $requestFactory, $serializer);
+        return new SleeperApiClient(self::BASE_URI, $sports, $pluginClient, $uriFactory, $requestFactory, $serializer);
     }
 }

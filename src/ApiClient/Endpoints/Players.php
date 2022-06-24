@@ -12,7 +12,7 @@ class Players extends AbstractEndpoint
     public const TRENDING_TYPE_ADD = 'add';
     public const TRENDING_TYPE_DROP = 'drop';
 
-    public function list(string $sports = 'nfl'): SleeperPlayerList
+    public function list(): SleeperPlayerList
     {
         $uri = $this->uri(
             sprintf(
