@@ -4,39 +4,49 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\ApiClient\Endpoints;
 
+use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClientInterface;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperDepthChart;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerList;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperResearchPlayer;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperTrendingPlayer;
 
-class Players extends AbstractEndpoint
+class Player extends AbstractEndpoint
 {
     public const TRENDING_TYPE_ADD = 'add';
     public const TRENDING_TYPE_DROP = 'drop';
 
-    public function list(): SleeperPlayerList
+    /**
+     * @return SleeperPlayer[]
+     */
+    public function list(): array
     {
         $uri = $this->uri(
             sprintf(
-                'v1/players/%s',
-                $this->sleeperApiClient->getSports()
+                'players/%s',
+                $this->sleeperApiClient->getSport()
             )
         );
 
         return $this->sleeperApiClient->get(
             $uri,
-            SleeperPlayerList::class
+            SleeperPlayer::class . '[]'
         );
     }
 
+    /**
+     * @return SleeperTrendingPlayer[]
+     */
     public function trending(
         string $type = self::TRENDING_TYPE_ADD,
         int    $lookBackHours = 24,
         int    $limit = 25
-    ): SleeperPlayerList
+    ): array
     {
         $uri = $this->uri(
             sprintf(
-                'v1/players/%s/trending/%s',
-                $this->sleeperApiClient->getSports(),
+                'players/%s/trending/%s',
+                $this->sleeperApiClient->getSport(),
                 $type
             ), [
                 'lookback_hours' => $lookBackHours,
@@ -46,27 +56,34 @@ class Players extends AbstractEndpoint
 
         return $this->sleeperApiClient->get(
             $uri,
-            SleeperPlayerList::class
+            SleeperTrendingPlayer::class . '[]'
         );
     }
 
+    /**
+     * @return SleeperResearchPlayer[]
+     */
     public function research(
         int    $season,
+        string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR,
         ?int   $week = null
-    )
+    ): array
     {
         $uri = $this->uri(
             sprintf(
-                'players/%s/research/regular/%s%s',
-                $this->sleeperApiClient->getSports(),
+                'players/%s/research/%s/%s%s',
+                $this->sleeperApiClient->getSport(),
+                $seasonType,
                 $season,
                 $week ?: ''
-            )
+            ),
+            [],
+            SleeperApiClientInterface::BASE_URI_COM
         );
 
         return $this->sleeperApiClient->get(
             $uri,
-            'TBD'
+            SleeperResearchPlayer::class . '[]'
         );
     }
 
@@ -77,9 +94,11 @@ class Players extends AbstractEndpoint
         $url = $this->uri(
             sprintf(
                 'players/%s/%s',
-                $this->sleeperApiClient->getSports(),
+                $this->sleeperApiClient->getSport(),
                 $playerId
-            )
+            ),
+            [],
+            SleeperApiClientInterface::BASE_URI_COM
         );
 
         return $this->sleeperApiClient->get(
@@ -93,14 +112,16 @@ class Players extends AbstractEndpoint
         $url = $this->uri(
             sprintf(
                 'players/%s/%s/depth_chart',
-                $this->sleeperApiClient->getSports(),
+                $this->sleeperApiClient->getSport(),
                 $teamAbbreviation
-            )
+            ),
+            [],
+            SleeperApiClientInterface::BASE_URI_COM
         );
 
         return $this->sleeperApiClient->get(
             $url,
-            'TBD'
+            SleeperDepthChart::class
         );
     }
 }

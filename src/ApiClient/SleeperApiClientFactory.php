@@ -5,25 +5,35 @@ declare(strict_types=1);
 namespace HansPeterOrding\SleeperApiClient\ApiClient;
 
 use Http\Client\Common\Plugin\ContentTypePlugin;
+use Http\Client\Common\Plugin\CookiePlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Client\Common\Plugin\LoggerPlugin;
+use Http\Client\Common\Plugin\RetryPlugin;
 use Http\Client\Common\PluginClient;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
+use Http\Message\CookieJar;
 use Http\Message\Formatter\FullHttpMessageFormatter;
 use Psr\Http\Client\ClientInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpClient\Psr18Client;
+use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
+use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
 
 class SleeperApiClientFactory
 {
-    public const BASE_URI = 'https://api.sleeper.app/';
     public const SPORTS_NFL = 'nfl';
 
     public function getSleeperApiClient(
-        string $sports = self::SPORTS_NFL,
+        string           $sport = self::SPORTS_NFL,
         ?ClientInterface $client = null,
         ?LoggerInterface $logger = null
     ): SleeperApiClient {
@@ -39,8 +49,11 @@ class SleeperApiClientFactory
 
         $plugins[] = new ContentTypePlugin();
         $plugins[] = new HeaderDefaultsPlugin([
-            'Accept' => '',
-            'User-Agent' => ''
+            'Accept' => SleeperApiClientInterface::ACCEPT_JSON,
+            'User-Agent' => SleeperApiClientInterface::USER_AGENT
+        ]);
+        $plugins[] = new RetryPlugin([
+            'retries' => 3
         ]);
 
         $pluginClient = new PluginClient(
@@ -48,11 +61,19 @@ class SleeperApiClientFactory
             $plugins
         );
 
-        /**
-         * @todo: configure serializer
-         */
-        $serializer = new Serializer();
+        $encoders = [new JsonEncoder()];
+        $normalizers = [
+            new DateTimeNormalizer(),
+            new ObjectNormalizer(
+                null,
+                new CamelCaseToSnakeCaseNameConverter(),
+                null,
+                new ReflectionExtractor()
+            ),
+            new ArrayDenormalizer()
+        ];
+        $serializer = new Serializer($normalizers, $encoders);
 
-        return new SleeperApiClient(self::BASE_URI, $sports, $pluginClient, $uriFactory, $requestFactory, $serializer);
+        return new SleeperApiClient($sport, $pluginClient, $uriFactory, $requestFactory, $serializer);
     }
 }

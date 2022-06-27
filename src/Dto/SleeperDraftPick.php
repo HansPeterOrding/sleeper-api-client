@@ -17,7 +17,7 @@ class SleeperDraftPick
 
     private SleeperDraftPickMetadata $metadata;
 
-    private bool $isKeeper;
+    private ?bool $isKeeper;
 
     private int $draftSlot;
 
@@ -89,12 +89,12 @@ class SleeperDraftPick
         return $this;
     }
 
-    public function isKeeper(): bool
+    public function getIsKeeper(): ?bool
     {
         return $this->isKeeper;
     }
 
-    public function setIsKeeper(bool $isKeeper): SleeperDraftPick
+    public function setIsKeeper(?bool $isKeeper): SleeperDraftPick
     {
         $this->isKeeper = $isKeeper;
         return $this;

@@ -13,7 +13,7 @@ class SleeperTransaction
 
     private string $transactionId;
 
-    private DateTime $statusUpdated;
+    private int $statusUpdated;
 
     private string $status;
 
@@ -34,7 +34,7 @@ class SleeperTransaction
 
     private string $creator;
 
-    private DateTime $created;
+    private int $created;
 
     private ?array $consenterIds;
 
@@ -73,12 +73,12 @@ class SleeperTransaction
         return $this;
     }
 
-    public function getStatusUpdated(): DateTime
+    public function getStatusUpdated(): int
     {
         return $this->statusUpdated;
     }
 
-    public function setStatusUpdated(DateTime $statusUpdated): SleeperTransaction
+    public function setStatusUpdated(int $statusUpdated): SleeperTransaction
     {
         $this->statusUpdated = $statusUpdated;
         return $this;
@@ -172,12 +172,12 @@ class SleeperTransaction
         return $this;
     }
 
-    public function getCreated(): DateTime
+    public function getCreated(): int
     {
         return $this->created;
     }
 
-    public function setCreated(DateTime $created): SleeperTransaction
+    public function setCreated(int $created): SleeperTransaction
     {
         $this->created = $created;
         return $this;

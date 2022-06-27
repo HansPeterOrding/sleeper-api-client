@@ -21,7 +21,7 @@ class SleeperDraftPickMetadata
 
     private ?string $number;
 
-    private ?DateTime $newsUpdated;
+    private ?string $newsUpdated;
 
     private ?string $lastName;
 
@@ -106,12 +106,12 @@ class SleeperDraftPickMetadata
         return $this;
     }
 
-    public function getNewsUpdated(): ?DateTime
+    public function getNewsUpdated(): ?string
     {
         return $this->newsUpdated;
     }
 
-    public function setNewsUpdated(?DateTime $newsUpdated): SleeperDraftPickMetadata
+    public function setNewsUpdated(?string $newsUpdated): SleeperDraftPickMetadata
     {
         $this->newsUpdated = $newsUpdated;
         return $this;

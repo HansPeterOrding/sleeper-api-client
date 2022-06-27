@@ -5,7 +5,8 @@
   "license": "MIT",
   "require": {
     "php": ">=7.4",
-    "symfony/serializer": "^5.0|^6.0",
+    "symfony/serializer": "^6.0",
+    "symfony/property-access": "^6.0",
     "psr/http-client": "^1.0@dev",
     "php-http/discovery": "^1.9@dev",
     "php-http/logger-plugin": "^1.2@dev"

@@ -9,7 +9,7 @@ use DateTime;
 
 class SleeperPlayer
 {
-    private int $playerId;
+    private string $playerId;
 
     private ?string $firstName = null;
 
@@ -27,15 +27,15 @@ class SleeperPlayer
 
     private ?string $position = null;
 
-    private array $fantasyPositions = [];
+    private ?array $fantasyPositions = null;
 
     private ?string $depthChartPosition = null;
 
     private ?int $deptchChartOrder = null;
 
-    private ?int $weight = null;
+    private ?string $weight = null;
 
-    private ?int $height = null;
+    private ?string $height = null;
 
     private ?string $highSchool = null;
 
@@ -71,12 +71,12 @@ class SleeperPlayer
 
     private ?int $yahooId = null;
 
-    public function getPlayerId(): int
+    public function getPlayerId(): string
     {
         return $this->playerId;
     }
 
-    public function setPlayerId(int $playerId): SleeperPlayer
+    public function setPlayerId(string $playerId): SleeperPlayer
     {
         $this->playerId = $playerId;
         return $this;
@@ -170,12 +170,12 @@ class SleeperPlayer
         return $this;
     }
 
-    public function getFantasyPositions(): array
+    public function getFantasyPositions(): ?array
     {
         return $this->fantasyPositions;
     }
 
-    public function setFantasyPositions(array $fantasyPositions): SleeperPlayer
+    public function setFantasyPositions(?array $fantasyPositions): SleeperPlayer
     {
         $this->fantasyPositions = $fantasyPositions;
         return $this;
@@ -203,23 +203,23 @@ class SleeperPlayer
         return $this;
     }
 
-    public function getWeight(): ?int
+    public function getWeight(): ?string
     {
         return $this->weight;
     }
 
-    public function setWeight(?int $weight): SleeperPlayer
+    public function setWeight(?string $weight): SleeperPlayer
     {
         $this->weight = $weight;
         return $this;
     }
 
-    public function getHeight(): ?int
+    public function getHeight(): ?string
     {
         return $this->height;
     }
 
-    public function setHeight(?int $height): SleeperPlayer
+    public function setHeight(?string $height): SleeperPlayer
     {
         $this->height = $height;
         return $this;
