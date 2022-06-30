@@ -27,7 +27,7 @@ class SleeperPlayerProjection
 
     private ?string $gameId;
 
-    private DateTime $date;
+    private ?DateTime $date;
 
     private ?string $company;
 
@@ -143,12 +143,12 @@ class SleeperPlayerProjection
         return $this;
     }
 
-    public function getDate(): DateTime
+    public function getDate(): ?DateTime
     {
         return $this->date;
     }
 
-    public function setDate(DateTime $date): SleeperPlayerProjection
+    public function setDate(?DateTime $date): SleeperPlayerProjection
     {
         $this->date = $date;
         return $this;

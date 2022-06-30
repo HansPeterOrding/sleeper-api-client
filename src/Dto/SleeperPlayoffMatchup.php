@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
-class SleeperPlayoffBracketMatchup
+class SleeperPlayoffMatchup
 {
     private int $r;
 
@@ -11,11 +11,11 @@ class SleeperPlayoffBracketMatchup
 
     private ?int $t1;
 
-    private ?int $t1From;
+    private ?SleeperPlayoffMatchupSource $t1From;
 
     private ?int $t2;
 
-    private ?int $t2From;
+    private ?SleeperPlayoffMatchupSource $t2From;
 
     private ?int $w;
 
@@ -28,7 +28,7 @@ class SleeperPlayoffBracketMatchup
         return $this->r;
     }
 
-    public function setR(int $r): SleeperPlayoffBracketMatchup
+    public function setR(int $r): SleeperPlayoffMatchup
     {
         $this->r = $r;
         return $this;
@@ -39,7 +39,7 @@ class SleeperPlayoffBracketMatchup
         return $this->m;
     }
 
-    public function setM(int $m): SleeperPlayoffBracketMatchup
+    public function setM(int $m): SleeperPlayoffMatchup
     {
         $this->m = $m;
         return $this;
@@ -50,18 +50,18 @@ class SleeperPlayoffBracketMatchup
         return $this->t1;
     }
 
-    public function setT1(?int $t1): SleeperPlayoffBracketMatchup
+    public function setT1(?int $t1): SleeperPlayoffMatchup
     {
         $this->t1 = $t1;
         return $this;
     }
 
-    public function getT1From(): ?int
+    public function getT1From(): ?SleeperPlayoffMatchupSource
     {
         return $this->t1From;
     }
 
-    public function setT1From(?int $t1From): SleeperPlayoffBracketMatchup
+    public function setT1From(?SleeperPlayoffMatchupSource $t1From): SleeperPlayoffMatchup
     {
         $this->t1From = $t1From;
         return $this;
@@ -72,18 +72,18 @@ class SleeperPlayoffBracketMatchup
         return $this->t2;
     }
 
-    public function setT2(?int $t2): SleeperPlayoffBracketMatchup
+    public function setT2(?int $t2): SleeperPlayoffMatchup
     {
         $this->t2 = $t2;
         return $this;
     }
 
-    public function getT2From(): ?int
+    public function getT2From(): ?SleeperPlayoffMatchupSource
     {
         return $this->t2From;
     }
 
-    public function setT2From(?int $t2From): SleeperPlayoffBracketMatchup
+    public function setT2From(?SleeperPlayoffMatchupSource $t2From): SleeperPlayoffMatchup
     {
         $this->t2From = $t2From;
         return $this;
@@ -94,7 +94,7 @@ class SleeperPlayoffBracketMatchup
         return $this->w;
     }
 
-    public function setW(?int $w): SleeperPlayoffBracketMatchup
+    public function setW(?int $w): SleeperPlayoffMatchup
     {
         $this->w = $w;
         return $this;
@@ -105,7 +105,7 @@ class SleeperPlayoffBracketMatchup
         return $this->l;
     }
 
-    public function setL(?int $l): SleeperPlayoffBracketMatchup
+    public function setL(?int $l): SleeperPlayoffMatchup
     {
         $this->l = $l;
         return $this;
@@ -116,7 +116,7 @@ class SleeperPlayoffBracketMatchup
         return $this->p;
     }
 
-    public function setP(?int $p): SleeperPlayoffBracketMatchup
+    public function setP(?int $p): SleeperPlayoffMatchup
     {
         $this->p = $p;
         return $this;

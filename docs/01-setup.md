@@ -18,25 +18,56 @@ of the Composer documentation.
 Use the client
 --------------
 
-To make use of the sleeper api client, you only need a PSR-18 compatible HTTP client that you inject into the sleeper api client object on instanciation:
+To make use of the sleeper api client, you only need to install some bundles of your choice for:
+* PSR-18 compatible HTTP client (e.g. [Symfony HTTP client](https://github.com/symfony/http-client))
+* PSR-7 compatible library (e.g. [Nyholm PSR 7 implementation](https://github.com/Nyholm/psr7))
+
+If these prerequisites are met, you can simply use the SleeperApiClientFactory to get a fully qualified instance of SleeperApiClient;
 
 ```php
 <?php
-// app/AppKernel.php
+// MyCustomClientUsage.php
 
-// ...
-class AppKernel extends Kernel
+use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClient;
+use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClientFactory;
+use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClientInterface;
+
+class SleeperApiClientUsage
 {
-    public function registerBundles()
+    public function initSleeperApiClient(): SleeperApiClientInterface
     {
-        $bundles = [
-            // ...
-            new HansPeterOrding\NflFastrSymfonyBundle\NflFastrSymfonyBundle(),
-        ];
-
-        // ...
+        $sleeperApiClient = (new SleeperApiClientFactory())->getSleeperApiClient();
+        
+        return $sleeperApiClient;
     }
 }
 ```
 
 You can now use the sleeper api client to request resources from the sleeper api:
+
+```php
+<?php
+// MyCustomClientUsage.php
+
+use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClient;
+use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClientFactory;
+use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClientInterface;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperDraft;
+
+class SleeperApiClientUsage
+{
+    public function initSleeperApiClient(): SleeperApiClientInterface
+    {
+        $sleeperApiClient = (new SleeperApiClientFactory())->getSleeperApiClient();
+        
+        return $sleeperApiClient;
+    }
+    
+    public function getMyDrafts(): array
+    {
+        $client = $this->initSleeperApiClient();
+        
+        return $client->user()->listDrafts('my-sleeper-user-id', 2022);
+    }
+}
+```

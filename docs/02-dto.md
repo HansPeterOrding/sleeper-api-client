@@ -1,22 +1,12 @@
 Data transfer objects
 =====================
 
-@todo: adjust
+Sleeper API delivers JSON data. To enable object oriented work with this data, the SleeperApiClient introduces data transfer objects (DTO) for every piece of data available via Sleeper API.
 
-The base data comes as CSV files and as such consists of "flat" data.
-Every play resp. roster assignment of a player is one line of csv.
-In contrast, modern web software makes use of object oriented models instead.
+All of these DTO are more or less one to one projections of the Sleeper data to objects with some minor adjustments:
 
-This bundle has designed those entities based on the following goals:
+* All properties are camel case whereas the original data comes in snake case
+* Properties containing date strings are converted to DateTime objects
+* Properties containing timestamps are left as integers (or string if Sleeper defines so)
 
-* Provide object-oriented models reflecting complete data without any loss
-* Group belonging data where possible
-* Build associations (1:1, 1:n, m:n) where it makes sense and provides easier handling
-* Avoid putting data required for querying in sub-objects where possible
-* Use adequate types for data (e.g. `{DateTime}` for all dates)
-
-Following these guidelines, the bundle provides data in a complex class structure:
-
-![Class diagram](class_diagram_rosters.png)
-
-Details on the fields of each class and from which CSV column the values of the fields come from can be found in [field mapping docs](field_mapping.md).
+To achieve this conversion, the SleeperApiClient makes use of [Symfony serializer component](https://symfony.com/doc/current/components/serializer.html). This component and all subsequently needed packages are automatically installed as dependencies when the package itself is installed.

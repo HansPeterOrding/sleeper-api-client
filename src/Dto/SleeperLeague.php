@@ -29,7 +29,7 @@ class SleeperLeague
 
     private string $draftId;
 
-    private string $avatar;
+    private ?string $avatar;
 
     public function __construct()
     {
@@ -169,12 +169,12 @@ class SleeperLeague
         return $this;
     }
 
-    public function getAvatar(): string
+    public function getAvatar(): ?string
     {
         return $this->avatar;
     }
 
-    public function setAvatar(string $avatar): SleeperLeague
+    public function setAvatar(?string $avatar): SleeperLeague
     {
         $this->avatar = $avatar;
         return $this;

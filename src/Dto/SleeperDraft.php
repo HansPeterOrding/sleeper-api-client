@@ -11,7 +11,7 @@ class SleeperDraft
 
     private string $status;
 
-    private ?DateTime $startTime;
+    private int $startTime;
 
     private string $sport;
 
@@ -21,25 +21,25 @@ class SleeperDraft
 
     private string $seasonType;
 
-    private int $season;
+    private string $season;
 
     private SleeperDraftMetadata $metadata;
 
     private string $leagueId;
 
-    private ?DateTime $lastPicked;
+    private int $lastPicked;
 
-    private ?DateTime $lastMessageTime;
+    private int $lastMessageTime;
 
     private ?string $lastMessageId;
 
-    private array $draftOrder;
+    private ?array $draftOrder;
 
     private string $draftId;
 
-    private array $creators;
+    private ?array $creators;
 
-    private ?DateTime $created;
+    private int $created;
 
     public function getType(): string
     {
@@ -63,12 +63,12 @@ class SleeperDraft
         return $this;
     }
 
-    public function getStartTime(): ?DateTime
+    public function getStartTime(): int
     {
         return $this->startTime;
     }
 
-    public function setStartTime(?DateTime $startTime): SleeperDraft
+    public function setStartTime(int $startTime): SleeperDraft
     {
         $this->startTime = $startTime;
         return $this;
@@ -118,12 +118,12 @@ class SleeperDraft
         return $this;
     }
 
-    public function getSeason(): int
+    public function getSeason(): string
     {
         return $this->season;
     }
 
-    public function setSeason(int $season): SleeperDraft
+    public function setSeason(string $season): SleeperDraft
     {
         $this->season = $season;
         return $this;
@@ -151,23 +151,23 @@ class SleeperDraft
         return $this;
     }
 
-    public function getLastPicked(): ?DateTime
+    public function getLastPicked(): int
     {
         return $this->lastPicked;
     }
 
-    public function setLastPicked(?DateTime $lastPicked): SleeperDraft
+    public function setLastPicked(int $lastPicked): SleeperDraft
     {
         $this->lastPicked = $lastPicked;
         return $this;
     }
 
-    public function getLastMessageTime(): ?DateTime
+    public function getLastMessageTime(): int
     {
         return $this->lastMessageTime;
     }
 
-    public function setLastMessageTime(?DateTime $lastMessageTime): SleeperDraft
+    public function setLastMessageTime(int $lastMessageTime): SleeperDraft
     {
         $this->lastMessageTime = $lastMessageTime;
         return $this;
@@ -184,12 +184,12 @@ class SleeperDraft
         return $this;
     }
 
-    public function getDraftOrder(): array
+    public function getDraftOrder(): ?array
     {
         return $this->draftOrder;
     }
 
-    public function setDraftOrder(array $draftOrder): SleeperDraft
+    public function setDraftOrder(?array $draftOrder): SleeperDraft
     {
         $this->draftOrder = $draftOrder;
         return $this;
@@ -206,23 +206,23 @@ class SleeperDraft
         return $this;
     }
 
-    public function getCreators(): array
+    public function getCreators(): ?array
     {
         return $this->creators;
     }
 
-    public function setCreators(array $creators): SleeperDraft
+    public function setCreators(?array $creators): SleeperDraft
     {
         $this->creators = $creators;
         return $this;
     }
 
-    public function getCreated(): ?DateTime
+    public function getCreated(): int
     {
         return $this->created;
     }
 
-    public function setCreated(?DateTime $created): SleeperDraft
+    public function setCreated(int $created): SleeperDraft
     {
         $this->created = $created;
         return $this;
