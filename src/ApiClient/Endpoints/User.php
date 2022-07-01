@@ -90,22 +90,4 @@ class User extends AbstractEndpoint
             SleeperDraft::class . '[]'
         );
     }
-
-    public static function playerObjectToPlayerArrayCallback(string $json): string
-    {
-        $json = preg_replace('/^\{"[0-9]*":/', '[', $json);
-        $json = preg_replace('/\}\}/', '}]', $json);
-        $json = preg_replace('/,"([0-9]*|[A-Z]{2,3})":/', ',', $json);
-
-        return $json;
-    }
-
-    public static function researchPlayerObjectToReseachPlayerArrayCallback(string $json): string
-    {
-        $json = preg_replace('/^\{/', '[', $json);
-        $json = preg_replace('/\}\}/', '}]', $json);
-        $json = preg_replace('/"([0-9]*|[A-Z]*)":({("started":[0-9.]*,)?"owned":[0-9.]*)(})/', '$2,"playerId":"$1"$4', $json);
-
-        return $json;
-    }
 }

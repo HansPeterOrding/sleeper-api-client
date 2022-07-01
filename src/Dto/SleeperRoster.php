@@ -13,7 +13,7 @@ class SleeperRoster
 
     private array $starters = [];
 
-    private array $reserve = [];
+    private ?array $reserve = [];
 
     private array $players = [];
 
@@ -63,12 +63,12 @@ class SleeperRoster
         return $this;
     }
 
-    public function getReserve(): array
+    public function getReserve(): ?array
     {
         return $this->reserve;
     }
 
-    public function setReserve(array $reserve): SleeperRoster
+    public function setReserve(?array $reserve): SleeperRoster
     {
         $this->reserve = $reserve;
         return $this;

@@ -7,6 +7,7 @@ namespace HansPeterOrding\SleeperApiClient\ApiClient\Endpoints;
 use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClientInterface;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperDepthChart;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperDraft;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperDraftPick;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperLeague;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerList;
@@ -33,13 +34,28 @@ class Draft extends AbstractEndpoint
         );
     }
 
-    public function picks(): Picks
+    /**
+     * @return SleeperDraftPick[]
+     */
+    public function listPicks(string $draftId)
     {
-        return new Picks($this->sleeperApiClient);
+        $url = $this->uri(
+            sprintf(
+                'draft/%s/picks',
+                $draftId
+            )
+        );
+
+        return $this->sleeperApiClient->get(
+            $url,
+            SleeperDraftPick::class . '[]'
+        );
     }
 
-    public function tradedPicks(): TradedPicks
+    public function listTradedPicks(string $draftId)
     {
-        return new TradedPicks($this->sleeperApiClient, TradedPicks::PARENT_DRAFT);
+        $tradedPicks = new TradedPicks($this->sleeperApiClient, TradedPicks::PARENT_DRAFT);
+
+        return $tradedPicks->list($draftId);
     }
 }

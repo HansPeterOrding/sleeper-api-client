@@ -91,7 +91,6 @@ class SleeperApiClient implements SleeperApiClientInterface
         $this->handleResponseCode($request, $response);
 
         $contents = $response->getBody()->getContents();
-        dump($contents);
 
         return $this->serializer->deserialize(
             $contents,

@@ -8,16 +8,20 @@ use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClientInterface;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperDepthChart;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperDraft;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperLeague;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperMatchup;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerList;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayoffMatchup;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperResearchPlayer;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperRoster;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperTransaction;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperTrendingPlayer;
 use HansPeterOrding\SleeperApiClient\Dto\SleeperUser;
 
 class League extends AbstractEndpoint
 {
     public function get(
-        int $leagueId
+        string $leagueId
     ): SleeperLeague
     {
         $url = $this->uri(
@@ -69,18 +73,88 @@ class League extends AbstractEndpoint
         );
     }
 
-    public function playoffMatchup(): PlayoffMatchup
+    /**
+     * @return SleeperRoster[]
+     */
+    public function listRosters(string $leagueId)
     {
-        return new PlayoffMatchup($this->sleeperApiClient);
+        $url = $this->uri(
+            sprintf(
+                'league/%s/rosters',
+                $leagueId
+            )
+        );
+
+        return $this->sleeperApiClient->get(
+            $url,
+            SleeperRoster::class . '[]'
+        );
     }
 
-    public function tradedPicks(): TradedPicks
+    /**
+     * @return SleeperPlayoffMatchup[]
+     */
+    public function listPlayoffMatchups(
+        string $leagueId,
+        string $branch = self::BRANCH_WINNERS
+    )
     {
-        return new TradedPicks($this->sleeperApiClient, TradedPicks::PARENT_LEAGUE);
+        $url = $this->uri(
+            sprintf(
+                'league/%s/%s',
+                $leagueId,
+                $branch
+            )
+        );
+
+        return $this->sleeperApiClient->get(
+            $url,
+            SleeperPlayoffMatchup::class . '[]'
+        );
     }
 
-    public function transactions(): Transactions
+    public function listTradedPicks(string $leagueId)
     {
-        return new Transactions($this->sleeperApiClient);
+        $tradedPicks = new TradedPicks($this->sleeperApiClient, TradedPicks::PARENT_LEAGUE);
+
+        return $tradedPicks->list($leagueId);
+    }
+
+    /**
+     * @return SleeperTransaction[]
+     */
+    public function listTransactions(string $leagueId, int $round)
+    {
+        $url = $this->uri(
+            sprintf(
+                'league/%s/transactions/%s',
+                $leagueId,
+                $round
+            )
+        );
+
+        return $this->sleeperApiClient->get(
+            $url,
+            SleeperTransaction::class . '[]'
+        );
+    }
+
+    /**
+     * @return SleeperMatchup[]
+     */
+    public function listMatchups(string $leagueId, int $week)
+    {
+        $url = $this->uri(
+            sprintf(
+                'league/%s/matchups/%s',
+                $leagueId,
+                $week
+            )
+        );
+
+        return $this->sleeperApiClient->get(
+            $url,
+            SleeperMatchup::class . '[]'
+        );
     }
 }

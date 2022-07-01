@@ -14,6 +14,9 @@ abstract class AbstractEndpoint
     public const SEASON_TYPE_PRE = 'pre';
     public const SEASON_TYPE_OFF = 'off';
 
+    public const BRANCH_WINNERS = 'winners_bracket';
+    public const BRANCH_LOSERS = 'losers_bracket';
+
     public const POSITION_QB = 'QB';
     public const POSITION_WR = 'WR';
     public const POSITION_RB = 'RB';

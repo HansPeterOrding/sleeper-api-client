@@ -16,6 +16,8 @@ type = add|drop
 √ https://api.sleeper.com/players/nfl/6797
 √ https://api.sleeper.com/players/nfl/LAC/depth_chart
 
+GET https://api.sleeper.app/v1/league/<league_id>/matchups/<week>
+
 
 
 √ GET https://api.sleeper.app/v1/league/<league_id>
@@ -29,6 +31,7 @@ https://sleepercdn.com/avatars/<avatar_id>
 https://sleepercdn.com/avatars/thumbs/<avatar_id>
 
 √ GET https://api.sleeper.app/v1/league/<league_id>/users
+√ GET https://api.sleeper.app/v1/league/<league_id>/rosters
 
 √ GET https://api.sleeper.app/v1/user/<user_id>/drafts/<sport>/<season>
 √ GET https://api.sleeper.app/v1/league/<league_id>/drafts

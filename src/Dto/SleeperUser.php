@@ -27,13 +27,27 @@ class SleeperUser
 
     private ?string $pending = null;
 
-    private bool $isBot;
+    private ?bool $isBot;
 
     private ?string $email = null;
 
     private ?string $displayName = null;
 
     private ?string $avatar = null;
+
+    public function __get($name)
+    {
+        if (array_key_exists($name, $this->data)) {
+            return $this->data[$name];
+        }
+
+        return null;
+    }
+
+    public function __isset($name)
+    {
+        return isset($this->data[$name]);
+    }
 
     public function getVerification(): ?string
     {
@@ -156,12 +170,12 @@ class SleeperUser
         return $this;
     }
 
-    public function isBot(): bool
+    public function getIsBot(): ?bool
     {
         return $this->isBot;
     }
 
-    public function setIsBot(bool $isBot): SleeperUser
+    public function setIsBot(?bool $isBot): SleeperUser
     {
         $this->isBot = $isBot;
         return $this;

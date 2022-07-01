@@ -108,6 +108,3 @@ class Stats extends AbstractEndpoint
         );
     }
 }
-
-//https://api.sleeper.com/stats/nfl/2021/1?season_type=regular&position[]=DB&position[]=DL&position[]=LB&position[]=QB&position[]=RB&position[]=TE&position[]=WR&player[]=2309&order_by=pts_ppr
-//https://api.sleeper.com/stats/nfl/player/2309?season_type=regular&season=2021
