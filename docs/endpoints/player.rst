@@ -29,7 +29,7 @@ Data transfer object
 Example
 =======
 
-    ..code-block:: php
+    .. code-block:: php
         /*
          * Returns all players known to Sleeper
          */
@@ -64,7 +64,7 @@ Data transfer object
 Example
 =======
 
-    ..code-block:: php
+    .. code-block:: php
         use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
 
         /**
@@ -102,7 +102,7 @@ Data transfer object
 Example
 =======
 
-    ..code-block:: php
+    .. code-block:: php
         use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
 
         /**
@@ -138,7 +138,7 @@ Data transfer object
 Example
 =======
 
-    ..code-block:: php
+    .. code-block:: php
         /**
          * Returns Aaron Rodgers
          */
@@ -168,7 +168,7 @@ Data transfer object
 Example
 =======
 
-    ..code-block:: php
+    .. code-block:: php
         use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
 
         /**

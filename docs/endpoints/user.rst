@@ -31,7 +31,7 @@ Data transfer object
 Example
 =======
 
-    ..code-block:: php
+    .. code-block:: php
         /**
          * Returns player HansPeterOrding
          */
@@ -65,7 +65,7 @@ Data transfer object
 Example
 =======
 
-    ..code-block:: php
+    .. code-block:: php
         /*
          * Returns all leagues for HansPeterOrding in 2022
          */
@@ -99,7 +99,7 @@ Data transfer object
 Example
 =======
 
-    ..code-block:: php
+    .. code-block:: php
         /*
          * Returns all drafts for HansPeterOrding in 2022
          */
