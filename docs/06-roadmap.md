@@ -1,5 +1,4 @@
-Outlook
-=======
+# Outlook
 
 This document gives a brief overview of planned features. None of the listed features are guaranteed to be developed, but are likely to come.
 

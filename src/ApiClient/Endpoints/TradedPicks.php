@@ -25,7 +25,8 @@ class TradedPicks extends AbstractEndpoint
     }
 
     /**
-     * @param DraftId or LeagueId $parentId
+     * @param string $parentId
+     * DraftId or LeagueId
      * @return SleeperTradedPick[]
      */
     public function list(

@@ -33,24 +33,6 @@ class User extends AbstractEndpoint
         );
     }
 
-    public function depthChart(string $teamAbbreviation)
-    {
-        $url = $this->uri(
-            sprintf(
-                'players/%s/%s/depth_chart',
-                $this->sleeperApiClient->getSport(),
-                $teamAbbreviation
-            ),
-            [],
-            SleeperApiClientInterface::BASE_URI_COM
-        );
-
-        return $this->sleeperApiClient->get(
-            $url,
-            SleeperDepthChart::class
-        );
-    }
-
     /**
      * @return SleeperLeague[]
      */

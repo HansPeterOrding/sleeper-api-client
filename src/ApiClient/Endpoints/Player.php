@@ -13,9 +13,6 @@ use HansPeterOrding\SleeperApiClient\Dto\SleeperTrendingPlayer;
 
 class Player extends AbstractEndpoint
 {
-    public const TRENDING_TYPE_ADD = 'add';
-    public const TRENDING_TYPE_DROP = 'drop';
-
     /**
      * @return SleeperPlayer[]
      */
@@ -38,7 +35,7 @@ class Player extends AbstractEndpoint
      * @return SleeperTrendingPlayer[]
      */
     public function trending(
-        string $type = self::TRENDING_TYPE_ADD,
+        string $type = AbstractEndpoint::TRENDING_TYPE_ADD,
         int    $lookBackHours = 24,
         int    $limit = 25
     ): array
