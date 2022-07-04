@@ -34,7 +34,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns the league with id 1234567890
          */
@@ -67,7 +67,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns users in league 1234567890
          */
@@ -100,7 +100,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns drafts in league 1234567890
          */
@@ -133,7 +133,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns rosters in league 1234567890
          */
@@ -167,7 +167,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
 
         /*
@@ -202,7 +202,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns traded picks in league 1234567890
          */
@@ -236,7 +236,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns transactions in league 1234567890 for week 1
          */
@@ -270,7 +270,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns matchups in league 1234567890 for week 1
          */

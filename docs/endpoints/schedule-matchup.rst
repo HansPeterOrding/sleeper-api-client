@@ -35,7 +35,7 @@ Data transfer objects
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns the schedule matchups of the regular season of NFL season 2022
          */

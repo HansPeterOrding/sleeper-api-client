@@ -29,7 +29,7 @@ Data transfer objects
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns the current state of the NFL season
          */
