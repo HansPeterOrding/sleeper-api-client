@@ -34,7 +34,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns the draft with ID 1234567890
          */
@@ -67,7 +67,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns draft picks in draft 1234567890
          */
@@ -100,7 +100,7 @@ Data transfer object
 Example
 =======
 
-    ...code-block:: php
+    ..code-block:: php
         /*
          * Returns traded picks in draft 1234567890
          */
