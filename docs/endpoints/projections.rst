@@ -38,23 +38,24 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+.. code-block:: php
 
-        /*
-         * Returns projections for regular season 2022 week 1 for QB, RB and WR, ordered by ADP in dynasty with STD scoring
-         */
-        $draft = $client->projections()->list(
-            2022,
-            AbstractEndpoint::SEASON_TYPE_REGULAR,
-            1,
-            [
-                AbstractEndpoint::POSITION_QB,
-                AbstractEndpoint::POSITION_WR,
-                AbstractEndpoint::POSITION_RB
-            ],
-            AbstractEndpoint::ORDER_BY_ADP_DYNASTY_STD
-        );
+    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+    /*
+     * Returns projections for regular season 2022 week 1 for QB, RB and WR, ordered by ADP in dynasty with STD scoring
+     */
+    $draft = $client->projections()->list(
+        2022,
+        AbstractEndpoint::SEASON_TYPE_REGULAR,
+        1,
+        [
+            AbstractEndpoint::POSITION_QB,
+            AbstractEndpoint::POSITION_WR,
+            AbstractEndpoint::POSITION_RB
+        ],
+        AbstractEndpoint::ORDER_BY_ADP_DYNASTY_STD
+    );
 
 *************************
 Get projection for player
