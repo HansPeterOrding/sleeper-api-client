@@ -67,6 +67,9 @@ abstract class AbstractEndpoint
     public const GROUPING_SEASON = 'season';
     public const GROUPING_WEEK = 'week';
 
+    public const TRENDING_TYPE_ADD = 'add';
+    public const TRENDING_TYPE_DROP = 'drop';
+
     protected SleeperApiClientInterface $sleeperApiClient;
 
     public function __construct(

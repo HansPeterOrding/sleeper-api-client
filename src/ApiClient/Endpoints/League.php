@@ -96,7 +96,7 @@ class League extends AbstractEndpoint
      */
     public function listPlayoffMatchups(
         string $leagueId,
-        string $branch = self::BRANCH_WINNERS
+        string $branch = AbstractEndpoint::BRANCH_WINNERS
     )
     {
         $url = $this->uri(
