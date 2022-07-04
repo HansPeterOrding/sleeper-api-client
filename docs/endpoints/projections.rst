@@ -39,7 +39,10 @@ Example
 =======
 
 .. code-block:: php
+   :linenos:
+   :caption: Code example
 
+    <?php
     use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
 
     /*
