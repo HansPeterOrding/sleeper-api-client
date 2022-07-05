@@ -34,11 +34,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns the league with id 1234567890
-         */
-        $draft = $client->league()->get('1234567890');
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns the league with id 1234567890
+     */
+    $draft = $client->league()->get('1234567890');
 
 **********
 List users
@@ -67,11 +69,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns users in league 1234567890
-         */
-        $draft = $client->league()->listUsers('1234567890');
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns users in league 1234567890
+     */
+    $draft = $client->league()->listUsers('1234567890');
 
 ***********
 List drafts
@@ -100,11 +104,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns drafts in league 1234567890
-         */
-        $draft = $client->league()->listDrafts('1234567890');
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns drafts in league 1234567890
+     */
+    $draft = $client->league()->listDrafts('1234567890');
 
 ************
 List rosters
@@ -133,11 +139,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns rosters in league 1234567890
-         */
-        $draft = $client->league()->listRosters('1234567890');
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns rosters in league 1234567890
+     */
+    $draft = $client->league()->listRosters('1234567890');
 
 *********************
 List playoff matchups
@@ -167,13 +175,15 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+.. code-block:: php
+   :linenos:
 
-        /*
-         * Returns playoff matchups from the winners bracket in league 1234567890
-         */
-        $draft = $client->league()->listPlayoffMatchups('1234567890', AbstractEndpoint::BRANCH_WINNERS);
+    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+    /*
+     * Returns playoff matchups from the winners bracket in league 1234567890
+     */
+    $draft = $client->league()->listPlayoffMatchups('1234567890', AbstractEndpoint::BRANCH_WINNERS);
 
 *****************
 List traded picks
@@ -202,11 +212,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns traded picks in league 1234567890
-         */
-        $draft = $client->league()->listTradedPicks('1234567890');
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns traded picks in league 1234567890
+     */
+    $draft = $client->league()->listTradedPicks('1234567890');
 
 *****************
 List transactions
@@ -236,11 +248,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns transactions in league 1234567890 for week 1
-         */
-        $draft = $client->league()->listTransactions('1234567890', 1);
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns transactions in league 1234567890 for week 1
+     */
+    $draft = $client->league()->listTransactions('1234567890', 1);
 
 *****************
 List matchups
@@ -270,9 +284,11 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns matchups in league 1234567890 for week 1
-         */
-        $draft = $client->league()->listMatchups('1234567890', 1);
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns matchups in league 1234567890 for week 1
+     */
+    $draft = $client->league()->listMatchups('1234567890', 1);
 

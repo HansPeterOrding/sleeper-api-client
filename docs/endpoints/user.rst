@@ -31,11 +31,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /**
-         * Returns player HansPeterOrding
-         */
-        $players = $client->user()->get('HansPeterOrding');
+.. code-block:: php
+   :linenos:
+
+    /**
+     * Returns player HansPeterOrding
+     */
+    $players = $client->user()->get('HansPeterOrding');
 
 ************
 List leagues
@@ -65,11 +67,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns all leagues for HansPeterOrding in 2022
-         */
-        $players = $client->user()->listLeagues(571115199303487488, 2022);
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns all leagues for HansPeterOrding in 2022
+     */
+    $players = $client->user()->listLeagues(571115199303487488, 2022);
 
 ***********
 List drafts
@@ -99,8 +103,10 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns all drafts for HansPeterOrding in 2022
-         */
-        $players = $client->user()->listDrafts(571115199303487488, 2022);
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns all drafts for HansPeterOrding in 2022
+     */
+    $players = $client->user()->listDrafts(571115199303487488, 2022);

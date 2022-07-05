@@ -29,8 +29,10 @@ Data transfer objects
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns the current state of the NFL season
-         */
-        $players = $client->nflState()->get();
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns the current state of the NFL season
+     */
+    $players = $client->nflState()->get();

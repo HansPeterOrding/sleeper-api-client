@@ -38,23 +38,25 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+.. code-block:: php
+   :linenos:
 
-        /*
-         * Returns stats for regular season 2022 week 1 for QB, RB and WR, ordered by points in HPPR scoring
-         */
-        $draft = $client->stats()->list(
-            2022,
-            AbstractEndpoint::SEASON_TYPE_REGULAR,
-            1,
-            [
-                AbstractEndpoint::POSITION_QB,
-                AbstractEndpoint::POSITION_WR,
-                AbstractEndpoint::POSITION_RB
-            ],
-            AbstractEndpoint::ORDER_BY_PTS_HALF_PPR
-        );
+    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+    /*
+     * Returns stats for regular season 2022 week 1 for QB, RB and WR, ordered by points in HPPR scoring
+     */
+    $draft = $client->stats()->list(
+        2022,
+        AbstractEndpoint::SEASON_TYPE_REGULAR,
+        1,
+        [
+            AbstractEndpoint::POSITION_QB,
+            AbstractEndpoint::POSITION_WR,
+            AbstractEndpoint::POSITION_RB
+        ],
+        AbstractEndpoint::ORDER_BY_PTS_HALF_PPR
+    );
 
 ********************
 Get stats for player
@@ -85,17 +87,19 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+.. code-block:: php
+   :linenos:
 
-        /*
-         * Returns stats for Aaron Rodgers for complete regular season 2022
-         */
-        $draft = $client->stats()->getForPlayer(
-            86,
-            2022,
-            AbstractEndpoint::SEASON_TYPE_REGULAR
-        );
+    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+    /*
+     * Returns stats for Aaron Rodgers for complete regular season 2022
+     */
+    $draft = $client->stats()->getForPlayer(
+        86,
+        2022,
+        AbstractEndpoint::SEASON_TYPE_REGULAR
+    );
 
 ***************************
 Get weekly stats for player
@@ -128,14 +132,16 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+.. code-block:: php
+   :linenos:
 
-        /*
-         * Returns list of stats for Aaron Rodgers for week 1 to 18 of regular season 2022
-         */
-        $draft = $client->stats()->getWeeklyForPlayer(
-            86,
-            2022,
-            AbstractEndpoint::SEASON_TYPE_REGULAR
-        );
+    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+    /*
+     * Returns list of stats for Aaron Rodgers for week 1 to 18 of regular season 2022
+     */
+    $draft = $client->stats()->getWeeklyForPlayer(
+        86,
+        2022,
+        AbstractEndpoint::SEASON_TYPE_REGULAR
+    );
