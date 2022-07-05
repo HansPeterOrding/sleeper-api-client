@@ -38,9 +38,9 @@ Data transfer object
 Example
 =======
 
+TBD: Check other problems in displaying incl. TOC
 .. code-block:: php
    :linenos:
-   :caption: Code example
 
     <?php
     use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
@@ -89,17 +89,19 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+ .. code-block:: php
+   :linenos:
 
-        /*
-         * Returns projection for Aaron Rodgers for complete regular season 2022
-         */
-        $draft = $client->projections()->getForPlayer(
-            86,
-            2022,
-            AbstractEndpoint::SEASON_TYPE_REGULAR
-        );
+     use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+     /*
+      * Returns projection for Aaron Rodgers for complete regular season 2022
+      */
+     $draft = $client->projections()->getForPlayer(
+         86,
+         2022,
+         AbstractEndpoint::SEASON_TYPE_REGULAR
+     );
 
 *********************************
 Get weekly projections for player
@@ -130,14 +132,16 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+ .. code-block:: php
+   :linenos:
 
-        /*
-         * Returns list of projections for Aaron Rodgers for week 1 to 18 of regular season 2022
-         */
-        $draft = $client->projections()->getWeeklyForPlayer(
-            86,
-            2022,
-            AbstractEndpoint::SEASON_TYPE_REGULAR
-        );
+     use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+     /*
+      * Returns list of projections for Aaron Rodgers for week 1 to 18 of regular season 2022
+      */
+     $draft = $client->projections()->getWeeklyForPlayer(
+         86,
+         2022,
+         AbstractEndpoint::SEASON_TYPE_REGULAR
+     );

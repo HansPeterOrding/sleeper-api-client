@@ -35,8 +35,10 @@ Data transfer objects
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns the schedule matchups of the regular season of NFL season 2022
-         */
-        $players = $client->scheduleMatchup->list(2022, AbstractEndpoint::SEASON_TYPE_REGULAR);
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns the schedule matchups of the regular season of NFL season 2022
+     */
+    $players = $client->scheduleMatchup->list(2022, AbstractEndpoint::SEASON_TYPE_REGULAR);

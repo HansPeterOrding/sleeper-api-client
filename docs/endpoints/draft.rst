@@ -34,11 +34,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns the draft with ID 1234567890
-         */
-        $draft = $client->draft()->get('1234567890');
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns the draft with ID 1234567890
+     */
+    $draft = $client->draft()->get('1234567890');
 
 ****************
 List draft picks
@@ -67,11 +69,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns draft picks in draft 1234567890
-         */
-        $draft = $client->draft()->listPicks('1234567890');
+ .. code-block:: php
+   :linenos:
+
+     /*
+      * Returns draft picks in draft 1234567890
+      */
+     $draft = $client->draft()->listPicks('1234567890');
 
 *****************
 List traded picks
@@ -100,8 +104,10 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns traded picks in draft 1234567890
-         */
-        $draft = $client->draft()->listTradedPicks('1234567890');
+ .. code-block:: php
+   :linenos:
+
+     /*
+      * Returns traded picks in draft 1234567890
+      */
+     $draft = $client->draft()->listTradedPicks('1234567890');

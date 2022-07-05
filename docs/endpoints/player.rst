@@ -29,11 +29,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /*
-         * Returns all players known to Sleeper
-         */
-        $players = $client->player()->list();
+.. code-block:: php
+   :linenos:
+
+    /*
+     * Returns all players known to Sleeper
+     */
+    $players = $client->player()->list();
 
 *********************
 List trending players
@@ -64,17 +66,19 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+.. code-block:: php
+   :linenos:
 
-        /**
-         * Returns 100 most added players in the last 72 hours
-         */
-        $players = $client->player()->trending(
-            AbstractEndpoint::TRENDING_TYPE_ADD,
-            72,
-            100
-        );
+    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+    /**
+     * Returns 100 most added players in the last 72 hours
+     */
+    $players = $client->player()->trending(
+        AbstractEndpoint::TRENDING_TYPE_ADD,
+        72,
+        100
+    );
 
 ***************************************
 Research player ownership and rostering
@@ -102,17 +106,19 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+.. code-block:: php
+   :linenos:
 
-        /**
-         * Returns ownership and rostering of all players for season 2021 in week one of the regular season
-         */
-        $players = $client->player()->research(
-            2021,
-            AbstractEndpoint::SEASON_TYPE_REGULAR,
-            1
-        );
+    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+    /**
+     * Returns ownership and rostering of all players for season 2021 in week one of the regular season
+     */
+    $players = $client->player()->research(
+        2021,
+        AbstractEndpoint::SEASON_TYPE_REGULAR,
+        1
+    );
 
 **********
 Get player
@@ -138,11 +144,13 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        /**
-         * Returns Aaron Rodgers
-         */
-        $players = $client->player()->get(86);
+.. code-block:: php
+   :linenos:
+
+    /**
+     * Returns Aaron Rodgers
+     */
+    $players = $client->player()->get(86);
 
 ***************
 Get depth chart
@@ -168,10 +176,12 @@ Data transfer object
 Example
 =======
 
-    .. code-block:: php
-        use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+.. code-block:: php
+   :linenos:
 
-        /**
-         * Returns current depth chart of Green Bay Packers
-         */
-        $players = $client->player()->depthChart('GB');
+    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+    /**
+     * Returns current depth chart of Green Bay Packers
+     */
+    $players = $client->player()->depthChart('GB');
