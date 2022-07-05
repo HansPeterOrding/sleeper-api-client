@@ -17,3 +17,11 @@ The following endpoints are implemented:
 * :doc:`Projections </endpoints/projections>`
 * :doc:`Stats </endpoints/stats>`
 
+.. Hidden TOC
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   :hidden:
+
+   endpoints/*

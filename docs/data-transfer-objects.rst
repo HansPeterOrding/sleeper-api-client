@@ -10,6 +10,4 @@ All of these DTOs are more or less one to one projections of the Sleeper data to
 * Properties containing date strings are converted to ``DateTime`` objects
 * Properties containing timestamps are left as integers (or string if Sleeper defines so)
 
-To achieve this conversion, the ``SleeperApiClient`` makes use of `Symfony serializer component`_. This component and all subsequently needed packages are automatically installed as dependencies when the package itself is installed.
-
-_`Symfony serializer component`: https://symfony.com/doc/current/components/serializer.html
+To achieve this conversion, the ``SleeperApiClient`` makes use of `Symfony serializer component <https://symfony.com/doc/current/components/serializer.html>`_. This component and all subsequently needed packages are automatically installed as dependencies when the package itself is installed.
