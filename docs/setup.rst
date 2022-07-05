@@ -51,6 +51,7 @@ You can now use the ``SleeperApiClient`` to request resources from the sleeper a
 .. code-block:: php
    :linenos:
 
+   <?php
    // MyCustomClientUsage.php
 
    use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClient;
