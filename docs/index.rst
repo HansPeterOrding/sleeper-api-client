@@ -21,7 +21,7 @@ how to :doc:`setup` the package.
 
    introduction
    setup
-   data_transfer_objects
+   data-transfer-objects
    endpoints
    contribute
    roadmap
