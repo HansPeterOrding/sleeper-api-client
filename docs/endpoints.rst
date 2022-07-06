@@ -20,8 +20,15 @@ The following endpoints are implemented:
 .. Hidden TOC
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    :hidden:
 
-   endpoints/*
+   endpoints/nfl-state
+   endpoints/schedule-matchup
+   endpoints/user
+   endpoints/player
+   endpoints/league
+   endpoints/draft
+   endpoints/projections
+   endpoints/stats
