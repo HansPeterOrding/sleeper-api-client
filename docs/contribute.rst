@@ -11,6 +11,7 @@ The following is a set of guidelines for contributing to SleeperApiClient. These
 
 .. contents:: Table of contents
    :depth: 2
+   :local:
 
 ***************
 Code of Conduct
