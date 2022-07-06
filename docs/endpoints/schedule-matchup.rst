@@ -20,7 +20,7 @@ URL
 ===
 
 ``https://api.sleeper.com/schedule/nfl/<season_type>/<season>``
-:samp: `https://api.sleeper.com/schedule/nfl/{season_type}/{season}`
+:samp:`https://api.sleeper.com/schedule/nfl/{season_type}/{season}`
 \https://api.sleeper.com/schedule/nfl/<season_type>/<season>
 
 Parameters
