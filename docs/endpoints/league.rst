@@ -19,7 +19,7 @@ Returns one league identified by its Sleeper ID
 URL
 ===
 
-https://api.sleeper.app/v1/league/<league_id>
+:samp:`https://api.sleeper.app/v1/league/{<league_id>}`
 
 Parameters
 ----------
@@ -30,6 +30,8 @@ Data transfer object
 ====================
 
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperLeague``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperLeagueSettings``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperLeagueScoringSettings``
 
 Example
 =======
@@ -37,10 +39,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns the league with id 1234567890
-     */
-    $draft = $client->league()->get('1234567890');
+   <?php
+
+   /*
+    * Returns the league with id 1234567890
+    */
+   $draft = $client->league()->get('1234567890');
 
 **********
 List users
@@ -54,7 +58,7 @@ Returns list of users in given league.
 URL
 ===
 
-https://api.sleeper.app/v1/league/<league_id>/users
+:samp:`https://api.sleeper.app/v1/league/{<league_id>}/users`
 
 Parameters
 ----------
@@ -64,7 +68,8 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperUser[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperUser``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperUserMetadata``
 
 Example
 =======
@@ -72,10 +77,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns users in league 1234567890
-     */
-    $draft = $client->league()->listUsers('1234567890');
+   <?php
+
+   /*
+    * Returns users in league 1234567890
+    */
+   $draft = $client->league()->listUsers('1234567890');
 
 ***********
 List drafts
@@ -89,7 +96,7 @@ Returns list of drafts in given league.
 URL
 ===
 
-https://api.sleeper.app/v1/league/<league_id>/drafts
+:samp:`https://api.sleeper.app/v1/league/{<league_id>}/drafts`
 
 Parameters
 ----------
@@ -99,7 +106,9 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperDraft[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraft``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftSettings``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftMetadata``
 
 Example
 =======
@@ -107,10 +116,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns drafts in league 1234567890
-     */
-    $draft = $client->league()->listDrafts('1234567890');
+   <?php
+
+   /*
+    * Returns drafts in league 1234567890
+    */
+   $draft = $client->league()->listDrafts('1234567890');
 
 ************
 List rosters
@@ -124,17 +135,18 @@ Returns list of rosters in given league.
 URL
 ===
 
-https://api.sleeper.app/v1/league/<league_id>/rosters
+:samp:`https://api.sleeper.app/v1/league/{<league_id>}/rosters`
 
 Parameters
 ----------
 
 :league_id: The sleeper league ID to identify the league
 
-Data transfer object
-====================
+Data transfer objects
+=====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperRoster[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperRoster``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperRosterSettings``
 
 Example
 =======
@@ -142,10 +154,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns rosters in league 1234567890
-     */
-    $draft = $client->league()->listRosters('1234567890');
+   <?php
+
+   /*
+    * Returns rosters in league 1234567890
+    */
+   $draft = $client->league()->listRosters('1234567890');
 
 *********************
 List playoff matchups
@@ -159,7 +173,7 @@ Returns list of playoff matchups in given league for the requested branch.
 URL
 ===
 
-https://api.sleeper.app/v1/league/<league_id>/<branch>
+:samp:`https://api.sleeper.app/v1/league/{<league_id>}/{<branch>}`
 
 Parameters
 ----------
@@ -170,7 +184,8 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayoffMatchup[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayoffMatchup``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayoffMatchupSource``
 
 Example
 =======
@@ -178,12 +193,14 @@ Example
 .. code-block:: php
    :linenos:
 
-    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-    /*
-     * Returns playoff matchups from the winners bracket in league 1234567890
-     */
-    $draft = $client->league()->listPlayoffMatchups('1234567890', AbstractEndpoint::BRANCH_WINNERS);
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /*
+    * Returns playoff matchups from the winners bracket in league 1234567890
+    */
+   $draft = $client->league()->listPlayoffMatchups('1234567890', AbstractEndpoint::BRANCH_WINNERS);
 
 *****************
 List traded picks
@@ -197,7 +214,7 @@ Returns list of traded picks in given league.
 URL
 ===
 
-https://api.sleeper.app/v1/league/<league_id>/traded_picks
+:samp:`https://api.sleeper.app/v1/league/{<league_id>}/traded_picks`
 
 Parameters
 ----------
@@ -207,7 +224,7 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperTradedPicks[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperTradedPick``
 
 Example
 =======
@@ -215,10 +232,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns traded picks in league 1234567890
-     */
-    $draft = $client->league()->listTradedPicks('1234567890');
+   <?php
+
+   /*
+    * Returns traded picks in league 1234567890
+    */
+   $draft = $client->league()->listTradedPicks('1234567890');
 
 *****************
 List transactions
@@ -232,7 +251,7 @@ Returns list of transactions (waiver bids, trades, drops, etc.) in given league.
 URL
 ===
 
-https://api.sleeper.app/v1/league/<league_id>/transactions/<round>
+:samp:`https://api.sleeper.app/v1/league/{<league_id>}/transactions/{<round>}`
 
 Parameters
 ----------
@@ -243,7 +262,11 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperTransaction[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperTransaction``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperTransactionWaiverBudget``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperTransactionWaiverSettings``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperTransactionMetadata``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperTradedPick``
 
 Example
 =======
@@ -251,10 +274,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns transactions in league 1234567890 for week 1
-     */
-    $draft = $client->league()->listTransactions('1234567890', 1);
+   <?php
+
+   /*
+    * Returns transactions in league 1234567890 for week 1
+    */
+   $draft = $client->league()->listTransactions('1234567890', 1);
 
 *****************
 List matchups
@@ -268,7 +293,7 @@ Returns list of matchup in given league.
 URL
 ===
 
-https://api.sleeper.app/v1/league/<league_id>/matchups/<week>
+:samp:`https://api.sleeper.app/v1/league/{<league_id>}/matchups/{<week>}`
 
 Parameters
 ----------
@@ -279,7 +304,7 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperMatchup[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperMatchup``
 
 Example
 =======
@@ -287,8 +312,10 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns matchups in league 1234567890 for week 1
-     */
-    $draft = $client->league()->listMatchups('1234567890', 1);
+   <?php
+
+   /*
+    * Returns matchups in league 1234567890 for week 1
+    */
+   $draft = $client->league()->listMatchups('1234567890', 1);
 

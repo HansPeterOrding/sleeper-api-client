@@ -19,7 +19,7 @@ Returns list of player projections for the given search data.
 URL
 ===
 
-https://api.sleeper.com/projections/nfl/<season>[/<week>]?season_type=<season_type>[&position=<position>][&order_by=<order_by>]
+:samp:`https://api.sleeper.com/projections/nfl/{<season>}[/{<week>}]?season_type={<season_type>}[&position={<position>}][&order_by={<order_by>}]`
 
 Parameters
 ----------
@@ -33,7 +33,9 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
 Example
 =======
@@ -42,23 +44,24 @@ TBD: Check other problems in displaying incl. TOC
 .. code-block:: php
    :linenos:
 
-    <?php
-    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-    /*
-     * Returns projections for regular season 2022 week 1 for QB, RB and WR, ordered by ADP in dynasty with STD scoring
-     */
-    $draft = $client->projections()->list(
-        2022,
-        AbstractEndpoint::SEASON_TYPE_REGULAR,
-        1,
-        [
-            AbstractEndpoint::POSITION_QB,
-            AbstractEndpoint::POSITION_WR,
-            AbstractEndpoint::POSITION_RB
-        ],
-        AbstractEndpoint::ORDER_BY_ADP_DYNASTY_STD
-    );
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /*
+    * Returns projections for regular season 2022 week 1 for QB, RB and WR, ordered by ADP in dynasty with STD scoring
+    */
+   $draft = $client->projections()->list(
+       2022,
+       AbstractEndpoint::SEASON_TYPE_REGULAR,
+       1,
+       [
+           AbstractEndpoint::POSITION_QB,
+           AbstractEndpoint::POSITION_WR,
+           AbstractEndpoint::POSITION_RB
+       ],
+       AbstractEndpoint::ORDER_BY_ADP_DYNASTY_STD
+   );
 
 *************************
 Get projection for player
@@ -72,7 +75,7 @@ Returns a players projection for the given search data for a season.
 URL
 ===
 
-https://api.sleeper.com/projections/nfl/player/<player_id>?season=<season>&season_type=<season_type>&grouping=season
+:samp:`https://api.sleeper.com/projections/nfl/player/{<player_id>}?season={<season>}&season_type={<season_type>}&grouping=season`
 
 Parameters
 ----------
@@ -85,6 +88,8 @@ Data transfer object
 ====================
 
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
 Example
 =======
@@ -92,16 +97,18 @@ Example
  .. code-block:: php
    :linenos:
 
-     use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-     /*
-      * Returns projection for Aaron Rodgers for complete regular season 2022
-      */
-     $draft = $client->projections()->getForPlayer(
-         86,
-         2022,
-         AbstractEndpoint::SEASON_TYPE_REGULAR
-     );
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /*
+    * Returns projection for Aaron Rodgers for complete regular season 2022
+    */
+   $draft = $client->projections()->getForPlayer(
+       86,
+       2022,
+       AbstractEndpoint::SEASON_TYPE_REGULAR
+   );
 
 *********************************
 Get weekly projections for player
@@ -115,7 +122,7 @@ Returns a list of player projections for the given search data for every week of
 URL
 ===
 
-https://api.sleeper.com/projections/nfl/player/<player_id>?season=<season>&season_type=<season_type>&grouping=week
+:samp:`https://api.sleeper.com/projections/nfl/player/{<player_id>}?season={<season>}&season_type={<season_type>}&grouping=week`
 
 Parameters
 ----------
@@ -127,7 +134,9 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
 Example
 =======
@@ -135,13 +144,15 @@ Example
  .. code-block:: php
    :linenos:
 
-     use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-     /*
-      * Returns list of projections for Aaron Rodgers for week 1 to 18 of regular season 2022
-      */
-     $draft = $client->projections()->getWeeklyForPlayer(
-         86,
-         2022,
-         AbstractEndpoint::SEASON_TYPE_REGULAR
-     );
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /*
+    * Returns list of projections for Aaron Rodgers for week 1 to 18 of regular season 2022
+    */
+   $draft = $client->projections()->getWeeklyForPlayer(
+       86,
+       2022,
+       AbstractEndpoint::SEASON_TYPE_REGULAR
+   );

@@ -19,12 +19,12 @@ Returns all NFL players known to Sleeper with a lot of base data.
 URL
 ===
 
-https://api.sleeper.app/v1/players/nfl
+:samp:`https://api.sleeper.app/v1/players/nfl`
 
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
 Example
 =======
@@ -32,10 +32,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns all players known to Sleeper
-     */
-    $players = $client->player()->list();
+   <?php
+
+   /*
+    * Returns all players known to Sleeper
+    */
+   $players = $client->player()->list();
 
 *********************
 List trending players
@@ -49,7 +51,7 @@ Returns a number of NFL players that are currently raising or falling the most i
 URL
 ===
 
-https://api.sleeper.app/v1/players/nfl/trending/<type>?lookback_hours=<lookback_hours>&limit=<limit>
+:samp:`https://api.sleeper.app/v1/players/nfl/trending/{<type>}?lookback_hours={<lookback_hours>}&limit={<limit>}`
 
 Parameters
 ----------
@@ -61,7 +63,7 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
 Example
 =======
@@ -69,16 +71,18 @@ Example
 .. code-block:: php
    :linenos:
 
-    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-    /**
-     * Returns 100 most added players in the last 72 hours
-     */
-    $players = $client->player()->trending(
-        AbstractEndpoint::TRENDING_TYPE_ADD,
-        72,
-        100
-    );
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /**
+    * Returns 100 most added players in the last 72 hours
+    */
+   $players = $client->player()->trending(
+       AbstractEndpoint::TRENDING_TYPE_ADD,
+       72,
+       100
+   );
 
 ***************************************
 Research player ownership and rostering
@@ -89,7 +93,7 @@ Returns a list of objects that inform about the current number of ownership of e
 URL
 ===
 
-https://api.sleeper.com/players/nfl/research/<season_type>/<season>[/<week>]
+:samp:`https://api.sleeper.com/players/nfl/research/{<season_type>}/{<season>}[/{<week>}]`
 
 Parameters
 ----------
@@ -109,16 +113,18 @@ Example
 .. code-block:: php
    :linenos:
 
-    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-    /**
-     * Returns ownership and rostering of all players for season 2021 in week one of the regular season
-     */
-    $players = $client->player()->research(
-        2021,
-        AbstractEndpoint::SEASON_TYPE_REGULAR,
-        1
-    );
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /**
+    * Returns ownership and rostering of all players for season 2021 in week one of the regular season
+    */
+   $players = $client->player()->research(
+       2021,
+       AbstractEndpoint::SEASON_TYPE_REGULAR,
+       1
+   );
 
 **********
 Get player
@@ -129,7 +135,7 @@ Returns one player identified by his Sleeper ID
 URL
 ===
 
-https://api.sleeper.app/v1/players/nfl/<player_id>
+:samp:`https://api.sleeper.app/v1/players/nfl/{<player_id>}`
 
 Parameters
 ----------
@@ -147,10 +153,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /**
-     * Returns Aaron Rodgers
-     */
-    $players = $client->player()->get(86);
+   <?php
+
+   /**
+    * Returns Aaron Rodgers
+    */
+   $players = $client->player()->get(86);
 
 ***************
 Get depth chart
@@ -161,7 +169,7 @@ As teams are assumed players in sleeper, this endpoint is also grouped into Play
 URL
 ===
 
-https://api.sleeper.com/players/nfl/<team_abbreviation>/depth_chart
+:samp:`https://api.sleeper.com/players/nfl/{<team_abbreviation>}/depth_chart`
 
 Parameters
 ----------
@@ -179,9 +187,11 @@ Example
 .. code-block:: php
    :linenos:
 
-    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-    /**
-     * Returns current depth chart of Green Bay Packers
-     */
-    $players = $client->player()->depthChart('GB');
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /**
+    * Returns current depth chart of Green Bay Packers
+    */
+   $players = $client->player()->depthChart('GB');

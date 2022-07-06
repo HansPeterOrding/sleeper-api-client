@@ -16,7 +16,7 @@ Returns one user identified by his Sleeper ID or username
 URL
 ===
 
-`https://api.sleeper.app/v1/user/<user_id_or_username>`_
+:samp:`https://api.sleeper.app/v1/user/{<user_id_or_username>}`
 
 Parameters
 ----------
@@ -27,6 +27,7 @@ Data transfer object
 ====================
 
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperUser``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperUserMetadata``
 
 Example
 =======
@@ -53,7 +54,7 @@ Returns all leagues a user is part of.
 URL
 ===
 
-`https://api.sleeper.app/v1/user/<user_id>/leagues/nfl/<season>`_
+:samp:`https://api.sleeper.app/v1/user/{<user_id>}/leagues/nfl/{<season>}`
 
 Parameters
 ----------
@@ -64,7 +65,9 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperLeague[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperLeague``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperLeagueSettings``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperLeagueScoringSettings``
 
 Example
 =======
@@ -91,7 +94,7 @@ Returns all drafts a user is part of.
 URL
 ===
 
-`https://api.sleeper.app/v1/user/<user_id>/drafts/nfl/<season>`_
+:samp:`https://api.sleeper.app/v1/user/{<user_id>}/drafts/nfl/{<season>}`
 
 Parameters
 ----------
@@ -102,7 +105,9 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperDraft[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraft``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftSettings``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftMetadata``
 
 Example
 =======
