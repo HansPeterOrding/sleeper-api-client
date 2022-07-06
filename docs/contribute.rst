@@ -1,3 +1,6 @@
+.. index::
+   single: Contribute
+
 ################################
 Contributing to SleeperApiClient
 ################################
@@ -22,7 +25,9 @@ This project and everyone participating in it is governed by the [Symfony Code o
 I don't want to read this whole thing I just have a question!!!
 ***************************************************************
 
-> **Note:** Please don't file an issue to ask a question. You'll get faster results by using the resources below.
+.. note::
+
+Please don't file an issue to ask a question. You'll get faster results by using the resources below.
 
 If you have questions on the underlying data, please use the official docs of Sleeper:
 
@@ -39,7 +44,9 @@ This section guides you through submitting a bug report for SleeperApiClient. Fo
 
 When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report).
 
-> **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
+.. note::
+
+If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
 How Do I Submit A (Good) Bug Report?
 ------------------------------------
