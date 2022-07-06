@@ -2,7 +2,7 @@
 SleeperApiClient Documentation
 ##############################
 
-API Client to consume the `Sleeper API`_ with a PSR-18 compatible HTTP Client and transform results into DTO.
+API Client to consume the `Sleeper API <https://docs.sleeper.app/>`_ with a PSR-18 compatible HTTP Client and transform results into DTO.
 
 Check out the :doc:`introduction` section for further information, including
 how to :doc:`setup` the package.
@@ -25,5 +25,3 @@ how to :doc:`setup` the package.
    endpoints
    contribute
    roadmap
-
-.. _`Sleeper API`: https://docs.sleeper.app/
