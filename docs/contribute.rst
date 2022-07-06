@@ -80,7 +80,7 @@ Suggesting Enhancements
 
 This section guides you through submitting an enhancement suggestion for ``SleeperApiClient``, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion and find related suggestions.
 
-When you are creating an enhancement suggestion, please :ref:`include as many details as possible <how-do-i-submit-a-good-enhancement-suggestion>`_.
+When you are creating an enhancement suggestion, please :ref:`include as many details as possible <how-do-i-submit-a-good-enhancement-suggestion>`.
 
 .. _how-do-i-submit-a-good-enhancement-suggestion:
 
@@ -132,6 +132,7 @@ PHP Styleguide
 ==============
 
 Stick to:
+
 * `PSR-1 <https://www.php-fig.org/psr/psr-1/>`_
 * `PSR-12 <https://www.php-fig.org/psr/psr-12/>`_
 * `PSR Naming Convention <https://www.php-fig.org/bylaws/psr-naming-conventions/>`_
