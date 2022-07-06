@@ -19,7 +19,7 @@ Returns list of player stats for the given search data.
 URL
 ===
 
-https://api.sleeper.com/stats/nfl/<season>[/<week>]?season_type=<season_type>[&position=<position>][&order_by=<order_by>]
+:samp:`https://api.sleeper.com/stats/nfl/{<season>}[/{<week>}]?season_type={<season_type>}[&position={<position>}][&order_by={<order_by>}]`
 
 Parameters
 ----------
@@ -33,7 +33,9 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerStats[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
 Example
 =======
@@ -41,22 +43,24 @@ Example
 .. code-block:: php
    :linenos:
 
-    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-    /*
-     * Returns stats for regular season 2022 week 1 for QB, RB and WR, ordered by points in HPPR scoring
-     */
-    $draft = $client->stats()->list(
-        2022,
-        AbstractEndpoint::SEASON_TYPE_REGULAR,
-        1,
-        [
-            AbstractEndpoint::POSITION_QB,
-            AbstractEndpoint::POSITION_WR,
-            AbstractEndpoint::POSITION_RB
-        ],
-        AbstractEndpoint::ORDER_BY_PTS_HALF_PPR
-    );
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /*
+    * Returns stats for regular season 2022 week 1 for QB, RB and WR, ordered by points in HPPR scoring
+    */
+   $draft = $client->stats()->list(
+       2022,
+       AbstractEndpoint::SEASON_TYPE_REGULAR,
+       1,
+       [
+           AbstractEndpoint::POSITION_QB,
+           AbstractEndpoint::POSITION_WR,
+           AbstractEndpoint::POSITION_RB
+       ],
+       AbstractEndpoint::ORDER_BY_PTS_HALF_PPR
+   );
 
 ********************
 Get stats for player
@@ -70,7 +74,7 @@ Returns a players stats for the given search data for a season.
 URL
 ===
 
-https://api.sleeper.com/stats/nfl/player/<player_id>?season=<season>&season_type=<season_type>&grouping=season
+:samp:`https://api.sleeper.com/stats/nfl/player/{<player_id>}?season={<season>}&season_type={<season_type>}&grouping=season`
 
 Parameters
 ----------
@@ -83,6 +87,8 @@ Data transfer object
 ====================
 
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
 Example
 =======
@@ -90,16 +96,18 @@ Example
 .. code-block:: php
    :linenos:
 
-    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-    /*
-     * Returns stats for Aaron Rodgers for complete regular season 2022
-     */
-    $draft = $client->stats()->getForPlayer(
-        86,
-        2022,
-        AbstractEndpoint::SEASON_TYPE_REGULAR
-    );
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /*
+    * Returns stats for Aaron Rodgers for complete regular season 2022
+    */
+   $draft = $client->stats()->getForPlayer(
+       86,
+       2022,
+       AbstractEndpoint::SEASON_TYPE_REGULAR
+   );
 
 ***************************
 Get weekly stats for player
@@ -113,7 +121,7 @@ Returns a list of player stats for the given search data for every week of a sea
 URL
 ===
 
-https://api.sleeper.com/stats/nfl/player/<player_id>?season=<season>&season_type=<season_type>&grouping=week
+:samp:`https://api.sleeper.com/stats/nfl/player/{<player_id>}?season={<season>}&season_type={<season_type>}&grouping=week`
 
 Parameters
 ----------
@@ -127,7 +135,9 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerStats[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperStats``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
 Example
 =======
@@ -135,13 +145,15 @@ Example
 .. code-block:: php
    :linenos:
 
-    use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+   <?php
 
-    /*
-     * Returns list of stats for Aaron Rodgers for week 1 to 18 of regular season 2022
-     */
-    $draft = $client->stats()->getWeeklyForPlayer(
-        86,
-        2022,
-        AbstractEndpoint::SEASON_TYPE_REGULAR
-    );
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /*
+    * Returns list of stats for Aaron Rodgers for week 1 to 18 of regular season 2022
+    */
+   $draft = $client->stats()->getWeeklyForPlayer(
+       86,
+       2022,
+       AbstractEndpoint::SEASON_TYPE_REGULAR
+   );

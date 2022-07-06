@@ -19,9 +19,7 @@ Returns the list of real NFL matchups for the given season type and season.
 URL
 ===
 
-``https://api.sleeper.com/schedule/nfl/<season_type>/<season>``
-:samp:`https://api.sleeper.com/schedule/nfl/{season_type}/{season}`
-\https://api.sleeper.com/schedule/nfl/<season_type>/<season>
+:samp:`https://api.sleeper.com/schedule/nfl/{<season_type>}/{<season>}`
 
 Parameters
 ----------

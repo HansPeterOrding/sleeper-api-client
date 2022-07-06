@@ -19,7 +19,7 @@ Returns one draft identified by its Sleeper ID
 URL
 ===
 
-https://api.sleeper.app/v1/draft/<draft_id>
+:samp:`https://api.sleeper.app/v1/draft/{<draft_id>}`
 
 Parameters
 ----------
@@ -30,6 +30,8 @@ Data transfer object
 ====================
 
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperDraft``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftSettings``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftMetadata``
 
 Example
 =======
@@ -37,10 +39,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns the draft with ID 1234567890
-     */
-    $draft = $client->draft()->get('1234567890');
+   <?php
+
+   /*
+    * Returns the draft with ID 1234567890
+    */
+   $draft = $client->draft()->get('1234567890');
 
 ****************
 List draft picks
@@ -54,7 +58,7 @@ Returns list of draft picks in the given draft.
 URL
 ===
 
-https://api.sleeper.app/v1/draft/<draft_id>/picks
+:samp:`https://api.sleeper.app/v1/draft/{<draft_id>}/picks`
 
 Parameters
 ----------
@@ -64,7 +68,8 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftPick[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftPick``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperDraftPickMetadata``
 
 Example
 =======
@@ -72,10 +77,12 @@ Example
  .. code-block:: php
    :linenos:
 
-     /*
-      * Returns draft picks in draft 1234567890
-      */
-     $draft = $client->draft()->listPicks('1234567890');
+   <?php
+
+   /*
+    * Returns draft picks in draft 1234567890
+    */
+   $draft = $client->draft()->listPicks('1234567890');
 
 *****************
 List traded picks
@@ -89,7 +96,7 @@ Returns list of traded draft picks in the given draft.
 URL
 ===
 
-https://api.sleeper.app/v1/draft/<draft_id>/traded_picks
+:samp:`https://api.sleeper.app/v1/draft/{<draft_id>}/traded_picks`
 
 Parameters
 ----------
@@ -99,7 +106,7 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperTradedPick[]``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperTradedPick``
 
 Example
 =======
@@ -107,7 +114,9 @@ Example
  .. code-block:: php
    :linenos:
 
-     /*
-      * Returns traded picks in draft 1234567890
-      */
-     $draft = $client->draft()->listTradedPicks('1234567890');
+   <?php
+
+   /*
+    * Returns traded picks in draft 1234567890
+    */
+   $draft = $client->draft()->listTradedPicks('1234567890');

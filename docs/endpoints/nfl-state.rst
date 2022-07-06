@@ -19,7 +19,7 @@ Returns the current state of the NFL season.
 URL
 ===
 
-https://api.sleeper.app/v1/state/nfl
+:samp:`https://api.sleeper.app/v1/state/nfl`
 
 Data transfer objects
 =====================
