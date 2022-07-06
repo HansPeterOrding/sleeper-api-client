@@ -16,7 +16,7 @@ Returns one user identified by his Sleeper ID or username
 URL
 ===
 
-https://api.sleeper.app/v1/user/<user_id_or_username>
+`https://api.sleeper.app/v1/user/<user_id_or_username>`_
 
 Parameters
 ----------
@@ -34,10 +34,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /**
-     * Returns player HansPeterOrding
-     */
-    $players = $client->user()->get('HansPeterOrding');
+   <?php
+
+   /**
+    * Returns player HansPeterOrding
+    */
+   $players = $client->user()->get('HansPeterOrding');
 
 ************
 List leagues
@@ -51,7 +53,7 @@ Returns all leagues a user is part of.
 URL
 ===
 
-https://api.sleeper.app/v1/user/<user_id>/leagues/nfl/<season>
+`https://api.sleeper.app/v1/user/<user_id>/leagues/nfl/<season>`_
 
 Parameters
 ----------
@@ -70,10 +72,12 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns all leagues for HansPeterOrding in 2022
-     */
-    $players = $client->user()->listLeagues(571115199303487488, 2022);
+   <?php
+
+   /*
+    * Returns all leagues for HansPeterOrding in 2022
+    */
+   $players = $client->user()->listLeagues(571115199303487488, 2022);
 
 ***********
 List drafts
@@ -87,7 +91,7 @@ Returns all drafts a user is part of.
 URL
 ===
 
-https://api.sleeper.app/v1/user/<user_id>/drafts/nfl/<season>
+`https://api.sleeper.app/v1/user/<user_id>/drafts/nfl/<season>`_
 
 Parameters
 ----------
@@ -106,7 +110,9 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns all drafts for HansPeterOrding in 2022
-     */
-    $players = $client->user()->listDrafts(571115199303487488, 2022);
+   <?php
+
+   /*
+    * Returns all drafts for HansPeterOrding in 2022
+    */
+   $players = $client->user()->listDrafts(571115199303487488, 2022);

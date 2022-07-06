@@ -32,7 +32,8 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns the current state of the NFL season
-     */
-    $players = $client->nflState()->get();
+   <?php
+   /*
+    * Returns the current state of the NFL season
+    */
+   $players = $client->nflState()->get();

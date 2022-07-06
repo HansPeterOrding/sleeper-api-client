@@ -19,7 +19,7 @@ Returns the list of real NFL matchups for the given season type and season.
 URL
 ===
 
-https://api.sleeper.com/schedule/nfl/<season_type>/<season>
+`https://api.sleeper.com/schedule/nfl/<season_type>/<season>`_
 
 Parameters
 ----------
@@ -38,7 +38,14 @@ Example
 .. code-block:: php
    :linenos:
 
-    /*
-     * Returns the schedule matchups of the regular season of NFL season 2022
-     */
-    $players = $client->scheduleMatchup->list(2022, AbstractEndpoint::SEASON_TYPE_REGULAR);
+   <?php
+
+   use HansPeterOrding\SleeperApiClient\ApiClient\Endpoints\AbstractEndpoint;
+
+   /*
+    * Returns the schedule matchups of the regular season of NFL season 2022
+    */
+   $players = $client->scheduleMatchup->list(
+      2022,
+      AbstractEndpoint::SEASON_TYPE_REGULAR
+   );
