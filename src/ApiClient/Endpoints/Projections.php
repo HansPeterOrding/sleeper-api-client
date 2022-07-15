@@ -49,7 +49,7 @@ class Projections extends AbstractEndpoint
     }
 
     /**
-     * @return SleeperPlayerProjection
+     * @return SleeperPlayerProjection|null
      */
     public function getForPlayer(
         int $playerId,

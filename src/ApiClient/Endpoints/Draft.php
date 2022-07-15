@@ -19,7 +19,7 @@ class Draft extends AbstractEndpoint
 {
     public function get(
         string $draftId
-    ): SleeperDraft
+    ): ?SleeperDraft
     {
         $url = $this->uri(
             sprintf(

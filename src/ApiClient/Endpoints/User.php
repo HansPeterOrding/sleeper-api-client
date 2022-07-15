@@ -18,7 +18,7 @@ class User extends AbstractEndpoint
 {
     public function get(
         string $userIdOrUsername
-    ): SleeperUser
+    ): ?SleeperUser
     {
         $url = $this->uri(
             sprintf(
