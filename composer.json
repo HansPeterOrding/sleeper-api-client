@@ -3,7 +3,6 @@
   "type": "library",
   "description": "Client library to consume the sleeper API (https://docs.sleeper.app/) and transform results into data transfer objects.",
   "license": "MIT",
-  "version": "1.0.0",
   "require": {
     "php": ">=8.0",
     "symfony/serializer": "^6.0",
