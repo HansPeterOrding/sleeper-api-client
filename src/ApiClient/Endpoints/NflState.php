@@ -8,7 +8,7 @@ use HansPeterOrding\SleeperApiClient\Dto\SleeperNflState;
 
 class NflState extends AbstractEndpoint
 {
-    public function get()
+    public function get(): SleeperNflState
     {
         $url = $this->uri(
             'state/nfl'

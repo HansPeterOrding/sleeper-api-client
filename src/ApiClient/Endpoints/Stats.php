@@ -49,7 +49,7 @@ class Stats extends AbstractEndpoint
     }
 
     /**
-     * @return SleeperPlayerStats
+     * @return SleeperPlayerStats|null
      */
     public function getForPlayer(
         int $playerId,

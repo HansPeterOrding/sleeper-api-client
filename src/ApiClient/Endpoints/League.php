@@ -22,7 +22,7 @@ class League extends AbstractEndpoint
 {
     public function get(
         string $leagueId
-    ): SleeperLeague
+    ): ?SleeperLeague
     {
         $url = $this->uri(
             sprintf(

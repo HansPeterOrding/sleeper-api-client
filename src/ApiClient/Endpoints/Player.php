@@ -86,7 +86,7 @@ class Player extends AbstractEndpoint
 
     public function get(
         int $playerId
-    ): SleeperPlayer
+    ): ?SleeperPlayer
     {
         $url = $this->uri(
             sprintf(
@@ -104,7 +104,7 @@ class Player extends AbstractEndpoint
         );
     }
 
-    public function depthChart(string $teamAbbreviation)
+    public function depthChart(string $teamAbbreviation): ?SleeperDepthChart
     {
         $url = $this->uri(
             sprintf(

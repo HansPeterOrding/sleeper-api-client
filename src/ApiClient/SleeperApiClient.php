@@ -92,6 +92,10 @@ class SleeperApiClient implements SleeperApiClientInterface
 
         $contents = $response->getBody()->getContents();
 
+        if($contents === 'null') {
+            return null;
+        }
+
         return $this->serializer->deserialize(
             $contents,
             $return,
@@ -118,8 +122,6 @@ class SleeperApiClient implements SleeperApiClientInterface
         }
 
         if ($response->getStatusCode() >= 400 && $response->getStatusCode() <= 499) {
-            dump($response);
-            dump($response->getBody()->getContents());
             throw ClientErrorException::create($request, $response);
         }
 
