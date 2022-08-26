@@ -11,7 +11,7 @@ class SleeperDraft
 
     private string $status;
 
-    private int $startTime;
+    private ?int $startTime;
 
     private string $sport;
 
@@ -27,9 +27,9 @@ class SleeperDraft
 
     private string $leagueId;
 
-    private int $lastPicked;
+    private ?int $lastPicked;
 
-    private int $lastMessageTime;
+    private ?int $lastMessageTime;
 
     private ?string $lastMessageId;
 
@@ -63,12 +63,12 @@ class SleeperDraft
         return $this;
     }
 
-    public function getStartTime(): int
+    public function getStartTime(): ?int
     {
         return $this->startTime;
     }
 
-    public function setStartTime(int $startTime): SleeperDraft
+    public function setStartTime(?int $startTime): SleeperDraft
     {
         $this->startTime = $startTime;
         return $this;
@@ -151,23 +151,23 @@ class SleeperDraft
         return $this;
     }
 
-    public function getLastPicked(): int
+    public function getLastPicked(): ?int
     {
         return $this->lastPicked;
     }
 
-    public function setLastPicked(int $lastPicked): SleeperDraft
+    public function setLastPicked(?int $lastPicked): SleeperDraft
     {
         $this->lastPicked = $lastPicked;
         return $this;
     }
 
-    public function getLastMessageTime(): int
+    public function getLastMessageTime(): ?int
     {
         return $this->lastMessageTime;
     }
 
-    public function setLastMessageTime(int $lastMessageTime): SleeperDraft
+    public function setLastMessageTime(?int $lastMessageTime): SleeperDraft
     {
         $this->lastMessageTime = $lastMessageTime;
         return $this;
