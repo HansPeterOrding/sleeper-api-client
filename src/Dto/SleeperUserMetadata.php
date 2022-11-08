@@ -17,6 +17,8 @@ class SleeperUserMetadata
 
     private ?string $tradeBlockPn = null;
 
+    private ?string $teamName = null;
+
     private ?string $teamNameUpdate = null;
 
     private ?string $playerNicknameUpdate = null;
@@ -134,6 +136,17 @@ class SleeperUserMetadata
     public function setTradeBlockPn(?string $tradeBlockPn): SleeperUserMetadata
     {
         $this->tradeBlockPn = $tradeBlockPn;
+        return $this;
+    }
+
+    public function getTeamName(): ?string
+    {
+        return $this->teamName;
+    }
+
+    public function setTeamName(?string $teamName): SleeperUserMetadata
+    {
+        $this->teamName = $teamName;
         return $this;
     }
 
