@@ -71,6 +71,8 @@ class SleeperPlayer
 
     private ?int $yahooId = null;
 
+    private ?string $injuryStatus = null;
+
     public function getPlayerId(): string
     {
         return $this->playerId;
@@ -409,6 +411,17 @@ class SleeperPlayer
     public function setYahooId(?int $yahooId): SleeperPlayer
     {
         $this->yahooId = $yahooId;
+        return $this;
+    }
+
+    public function getInjuryStatus(): ?string
+    {
+        return $this->injuryStatus;
+    }
+
+    public function setInjuryStatus(?string $injuryStatus): SleeperPlayer
+    {
+        $this->injuryStatus = $injuryStatus;
         return $this;
     }
 }

@@ -52,9 +52,10 @@ class Projections extends AbstractEndpoint
      * @return SleeperPlayerProjection|null
      */
     public function getForPlayer(
-        int $playerId,
+        string $playerId,
         int $season,
-        string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR
+        string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR,
+        ?int $week = null
     )
     {
         $attributes = [
@@ -62,6 +63,10 @@ class Projections extends AbstractEndpoint
             'season_type' => $seasonType,
             'grouping' => AbstractEndpoint::GROUPING_SEASON
         ];
+
+        if($week) {
+            $attributes['week'] = $week;
+        }
 
         $url = $this->uri(
             sprintf(

@@ -85,7 +85,7 @@ class Player extends AbstractEndpoint
     }
 
     public function get(
-        int $playerId
+        string $playerId
     ): ?SleeperPlayer
     {
         $url = $this->uri(
