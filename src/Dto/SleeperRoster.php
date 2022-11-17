@@ -7,7 +7,7 @@ class SleeperRoster
 {
     private int $rosterId;
 
-    private string $ownerId;
+    private ?string $ownerId;
 
     private string $leagueId;
 
@@ -30,12 +30,12 @@ class SleeperRoster
         return $this;
     }
 
-    public function getOwnerId(): string
+    public function getOwnerId(): ?string
     {
         return $this->ownerId;
     }
 
-    public function setOwnerId(string $ownerId): SleeperRoster
+    public function setOwnerId(?string $ownerId): SleeperRoster
     {
         $this->ownerId = $ownerId;
         return $this;

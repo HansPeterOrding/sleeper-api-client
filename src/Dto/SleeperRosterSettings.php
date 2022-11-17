@@ -17,13 +17,13 @@ class SleeperRosterSettings
 
     private int $losses;
 
-    private int $fptsDecimal;
+    private int $fptsDecimal = 0;
 
-    private int $fptsAgainstDecimal;
+    private int $fptsAgainstDecimal = 0;
 
-    private int $fptsAgainst;
+    private int $fptsAgainst = 0;
 
-    private int $fpts;
+    private int $fpts = 0;
 
     public function getWins(): int
     {
