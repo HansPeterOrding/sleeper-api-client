@@ -5,15 +5,15 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 class SleeperMatchup
 {
-    private array $startersPoints = [];
+    private ?array $startersPoints = [];
 
-    private array $playersPoints = [];
+    private ?array $playersPoints = [];
 
-    private array $starters = [];
+    private ?array $starters = [];
 
     private int $rosterId;
 
-    private array $players = [];
+    private ?array $players = [];
 
     private int $matchupId;
 
@@ -21,34 +21,34 @@ class SleeperMatchup
 
     private ?float $customPoints;
 
-    public function getStartersPoints(): array
+    public function getStartersPoints(): ?array
     {
         return $this->startersPoints;
     }
 
-    public function setStartersPoints(array $startersPoints): SleeperMatchup
+    public function setStartersPoints(?array $startersPoints): SleeperMatchup
     {
         $this->startersPoints = $startersPoints;
         return $this;
     }
 
-    public function getPlayersPoints(): array
+    public function getPlayersPoints(): ?array
     {
         return $this->playersPoints;
     }
 
-    public function setPlayersPoints(array $playersPoints): SleeperMatchup
+    public function setPlayersPoints(?array $playersPoints): SleeperMatchup
     {
         $this->playersPoints = $playersPoints;
         return $this;
     }
 
-    public function getStarters(): array
+    public function getStarters(): ?array
     {
         return $this->starters;
     }
 
-    public function setStarters(array $starters): SleeperMatchup
+    public function setStarters(?array $starters): SleeperMatchup
     {
         $this->starters = $starters;
         return $this;
@@ -65,12 +65,12 @@ class SleeperMatchup
         return $this;
     }
 
-    public function getPlayers(): array
+    public function getPlayers(): ?array
     {
         return $this->players;
     }
 
-    public function setPlayers(array $players): SleeperMatchup
+    public function setPlayers(?array $players): SleeperMatchup
     {
         $this->players = $players;
         return $this;
