@@ -11,11 +11,11 @@ class SleeperRoster
 
     private string $leagueId;
 
-    private array $starters = [];
+    private ?array $starters = [];
 
     private ?array $reserve = [];
 
-    private array $players = [];
+    private ?array $players = [];
 
     private SleeperRosterSettings $settings;
 
@@ -52,12 +52,12 @@ class SleeperRoster
         return $this;
     }
 
-    public function getStarters(): array
+    public function getStarters(): ?array
     {
         return $this->starters;
     }
 
-    public function setStarters(array $starters): SleeperRoster
+    public function setStarters(?array $starters): SleeperRoster
     {
         $this->starters = $starters;
         return $this;
@@ -74,12 +74,12 @@ class SleeperRoster
         return $this;
     }
 
-    public function getPlayers(): array
+    public function getPlayers(): ?array
     {
         return $this->players;
     }
 
-    public function setPlayers(array $players): SleeperRoster
+    public function setPlayers(?array $players): SleeperRoster
     {
         $this->players = $players;
         return $this;
