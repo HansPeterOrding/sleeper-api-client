@@ -9,7 +9,7 @@ use HansPeterOrding\SleeperApiClient\Dto\SleeperScheduleMatchup;
 
 class ScheduleMatchup extends AbstractEndpoint
 {
-    public function list(int $season, string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR)
+    public function list(string $season, string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR)
     {
         $url = $this->uri(
             sprintf(

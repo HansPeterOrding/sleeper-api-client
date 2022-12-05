@@ -13,7 +13,7 @@ class Stats extends AbstractEndpoint
      * @return SleeperPlayerStats[]
      */
     public function list(
-        int     $season,
+        string     $season,
         string  $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR,
         ?int $week = null,
         ?array  $position = null,
@@ -52,8 +52,8 @@ class Stats extends AbstractEndpoint
      * @return SleeperPlayerStats|null
      */
     public function getForPlayer(
-        int $playerId,
-        int $season,
+        string $playerId,
+        string $season,
         string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR
     )
     {
@@ -82,8 +82,8 @@ class Stats extends AbstractEndpoint
      * @return SleeperPlayerStats[]
      */
     public function getWeeklyForPlayer(
-        int $playerId,
-        int $season,
+        string $playerId,
+        string $season,
         string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR
     )
     {

@@ -36,7 +36,7 @@ class User extends AbstractEndpoint
     /**
      * @return SleeperLeague[]
      */
-    public function listLeagues(string $userId, int $season)
+    public function listLeagues(string $userId, string $season)
     {
         $url = $this->uri(
             sprintf(
@@ -56,7 +56,7 @@ class User extends AbstractEndpoint
     /**
      * @return SleeperDraft[]
      */
-    public function listDrafts(string $userId, int $season)
+    public function listDrafts(string $userId, string $season)
     {
         $url = $this->uri(
             sprintf(

@@ -61,7 +61,7 @@ class Player extends AbstractEndpoint
      * @return SleeperResearchPlayer[]
      */
     public function research(
-        int    $season,
+        string $season,
         string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR,
         ?int   $week = null
     ): array

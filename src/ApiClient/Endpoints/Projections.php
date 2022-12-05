@@ -13,7 +13,7 @@ class Projections extends AbstractEndpoint
      * @return SleeperPlayerProjection[]
      */
     public function list(
-        int     $season,
+        string     $season,
         string  $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR,
         ?int $week = null,
         ?array  $position = null,
@@ -53,7 +53,7 @@ class Projections extends AbstractEndpoint
      */
     public function getForPlayer(
         string $playerId,
-        int $season,
+        string $season,
         string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR,
         ?int $week = null
     )
@@ -87,8 +87,8 @@ class Projections extends AbstractEndpoint
      * @return SleeperPlayerProjection[]
      */
     public function getWeeklyForPlayer(
-        int $playerId,
-        int $season,
+        string $playerId,
+        string $season,
         string $seasonType = AbstractEndpoint::SEASON_TYPE_REGULAR
     )
     {
