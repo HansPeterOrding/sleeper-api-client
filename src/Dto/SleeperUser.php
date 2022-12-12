@@ -9,7 +9,7 @@ class SleeperUser
 
     private SleeperUserMetadata $metadata;
 
-    private string $username;
+    private ?string $username = null;
 
     private string $userId;
 
@@ -71,12 +71,12 @@ class SleeperUser
         return $this;
     }
 
-    public function getUsername(): string
+    public function getUsername(): ?string
     {
         return $this->username;
     }
 
-    public function setUsername(string $username): SleeperUser
+    public function setUsername(?string $username): SleeperUser
     {
         $this->username = $username;
         return $this;

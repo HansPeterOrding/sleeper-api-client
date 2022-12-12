@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
-class SleeperLeague
+class SleeperLeague 
 {
     private int $totalRosters;
 

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
-class SleeperLeagueScoringSettings
+class SleeperLeagueScoringSettings 
 {
     private float $fgRetYd;
 

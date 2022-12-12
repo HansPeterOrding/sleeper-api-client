@@ -5,7 +5,7 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 use DateTime;
 
-class SleeperDraftPickMetadata
+class SleeperDraftPickMetadata 
 {
     private ?string $yearsExp;
 
