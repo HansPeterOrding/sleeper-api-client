@@ -5,7 +5,7 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 use DateTime;
 
-class SleeperDraft
+class SleeperDraft 
 {
     private string $type;
 

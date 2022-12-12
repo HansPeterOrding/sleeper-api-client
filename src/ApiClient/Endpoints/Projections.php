@@ -36,7 +36,7 @@ class Projections extends AbstractEndpoint
             sprintf(
                 'projections/nfl/%s%s',
                 $season,
-                $week?:''
+                $week?'/'.$week:''
             ),
             $attributes,
             SleeperApiClientInterface::BASE_URI_COM
