@@ -9,19 +9,19 @@ class SleeperPlayoffMatchup
 
     private int $m;
 
-    private ?int $t1;
+    private ?int $t1 = null;
 
-    private ?SleeperPlayoffMatchupSource $t1From;
+    private ?SleeperPlayoffMatchupSource $t1From = null;
 
-    private ?int $t2;
+    private ?int $t2 = null;
 
-    private ?SleeperPlayoffMatchupSource $t2From;
+    private ?SleeperPlayoffMatchupSource $t2From = null;
 
-    private ?int $w;
+    private ?int $w = null;
 
-    private ?int $l;
+    private ?int $l = null;
 
-    private ?int $p;
+    private ?int $p = null;
 
     public function getR(): int
     {

@@ -5,17 +5,17 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 class SleeperRosterSettings
 {
-    private int $wins;
+    private int $wins = 0;
 
-    private int $waiverPosition;
+    private int $waiverPosition = 0;
 
-    private int $waiverBudgetUsed;
+    private int $waiverBudgetUsed = 0;
 
-    private int $totalMoves;
+    private int $totalMoves = 0;
 
-    private int $ties;
+    private int $ties = 0;
 
-    private int $losses;
+    private int $losses = 0;
 
     private int $fptsDecimal = 0;
 

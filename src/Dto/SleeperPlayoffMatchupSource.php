@@ -5,9 +5,9 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 class SleeperPlayoffMatchupSource
 {
-    private ?int $w;
+    private ?int $w = null;
 
-    private ?int $l;
+    private ?int $l = null;
 
     public function getW(): ?int
     {
