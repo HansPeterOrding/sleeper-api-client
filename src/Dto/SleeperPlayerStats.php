@@ -7,9 +7,9 @@ use DateTime;
 
 class SleeperPlayerStats
 {
-    private ?int $week;
+    private ?int $week = null;
 
-    private ?string $team;
+    private ?string $team = null;
 
     private SleeperStats $stats;
 
@@ -19,19 +19,19 @@ class SleeperPlayerStats
 
     private string $season;
 
-    private ?string $playerId;
+    private ?string $playerId = null;
 
     private ?SleeperPlayer $player;
 
-    private ?string $opponent;
+    private ?string $opponent = null;
 
-    private ?string $gameId;
+    private ?string $gameId = null;
 
-    private ?DateTime $date;
+    private ?DateTime $date = null;
 
-    private ?string $company;
+    private ?string $company = null;
 
-    private ?string $category;
+    private ?string $category = null;
 
     public function getWeek(): ?int
     {

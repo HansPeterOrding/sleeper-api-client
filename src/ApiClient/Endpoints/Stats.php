@@ -36,7 +36,7 @@ class Stats extends AbstractEndpoint
             sprintf(
                 'stats/nfl/%s%s',
                 $season,
-                $week?:''
+                $week?'/'.$week:''
             ),
             $attributes,
             SleeperApiClientInterface::BASE_URI_COM
