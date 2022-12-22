@@ -23,6 +23,7 @@ class SleeperStats
 
     // Snap
     private ?float $offSnp = null;
+    private ?float $defSnp = null;
     private ?float $tmOffSnp = null;
     private ?float $tmDefSnp = null;
     private ?float $tmStSnp = null;
@@ -328,6 +329,17 @@ class SleeperStats
     public function setOffSnp(?float $offSnp): SleeperStats
     {
         $this->offSnp = $offSnp;
+        return $this;
+    }
+
+    public function getDefSnp(): ?float
+    {
+        return $this->defSnp;
+    }
+
+    public function setDefSnp(?float $defSnp): SleeperStats
+    {
+        $this->defSnp = $defSnp;
         return $this;
     }
 
