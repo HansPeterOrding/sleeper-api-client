@@ -15,7 +15,7 @@ class SleeperMatchup
 
     private ?array $players = [];
 
-    private int $matchupId;
+    private ?int $matchupId;
 
     private float $points;
 
@@ -76,12 +76,12 @@ class SleeperMatchup
         return $this;
     }
 
-    public function getMatchupId(): int
+    public function getMatchupId(): ?int
     {
         return $this->matchupId;
     }
 
-    public function setMatchupId(int $matchupId): SleeperMatchup
+    public function setMatchupId(?int $matchupId): SleeperMatchup
     {
         $this->matchupId = $matchupId;
         return $this;
