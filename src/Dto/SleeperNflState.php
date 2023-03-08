@@ -11,7 +11,7 @@ class SleeperNflState
 
     private string $seasonType;
 
-    private DateTime $seasonStartDate;
+    private ?DateTime $seasonStartDate;
 
     private string $season;
 
@@ -47,12 +47,12 @@ class SleeperNflState
         return $this;
     }
 
-    public function getSeasonStartDate(): DateTime
+    public function getSeasonStartDate(): ?DateTime
     {
         return $this->seasonStartDate;
     }
 
-    public function setSeasonStartDate(DateTime $seasonStartDate): SleeperNflState
+    public function setSeasonStartDate(?DateTime $seasonStartDate): SleeperNflState
     {
         $this->seasonStartDate = $seasonStartDate;
         return $this;
