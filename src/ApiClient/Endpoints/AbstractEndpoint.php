@@ -30,6 +30,7 @@ abstract class AbstractEndpoint
     public const POSITION_REC_FLEX = 'REC_FLEX';
     public const POSITION_IDP_FLEX = 'IDP_FLEX';
     public const POSITION_SUPER_FLEX = 'SUPER_FLEX';
+    public const POSITION_BN = 'BN';
 
     public const ORDER_BY_RUSH_YD = 'rush_yd';
     public const ORDER_BY_RUSH_TD = 'rush_TD';
