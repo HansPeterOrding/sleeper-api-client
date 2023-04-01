@@ -27,7 +27,7 @@ class SleeperLeague
 
     private string $leagueId;
 
-    private string $draftId;
+    private ?string $draftId = null;
 
     private ?string $avatar = null;
 
@@ -158,12 +158,12 @@ class SleeperLeague
         return $this;
     }
 
-    public function getDraftId(): string
+    public function getDraftId(): ?string
     {
         return $this->draftId;
     }
 
-    public function setDraftId(string $draftId): SleeperLeague
+    public function setDraftId(?string $draftId): SleeperLeague
     {
         $this->draftId = $draftId;
         return $this;
