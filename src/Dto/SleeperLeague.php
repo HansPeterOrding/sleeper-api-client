@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
-class SleeperLeague 
+class SleeperLeague
 {
     private int $totalRosters;
 
@@ -21,7 +21,7 @@ class SleeperLeague
 
     private array $rosterPositions = [];
 
-    private ?string $previousLeagueId;
+    private ?string $previousLeagueId = null;
 
     private string $name;
 
@@ -29,7 +29,7 @@ class SleeperLeague
 
     private string $draftId;
 
-    private ?string $avatar;
+    private ?string $avatar = null;
 
     public function __construct()
     {
