@@ -19,6 +19,8 @@ class SleeperRoster
 
     private SleeperRosterSettings $settings;
 
+    private ?array $coOwners = [];
+
     public function getRosterId(): int
     {
         return $this->rosterId;
@@ -93,6 +95,17 @@ class SleeperRoster
     public function setSettings(SleeperRosterSettings $settings): SleeperRoster
     {
         $this->settings = $settings;
+        return $this;
+    }
+
+    public function getCoOwners(): ?array
+    {
+        return $this->coOwners;
+    }
+
+    public function setCoOwners(?array $coOwners): SleeperRoster
+    {
+        $this->coOwners = $coOwners;
         return $this;
     }
 }
