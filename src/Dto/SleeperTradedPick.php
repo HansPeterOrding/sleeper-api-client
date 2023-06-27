@@ -15,9 +15,9 @@ class SleeperTradedPick
 
     private int $ownerId;
 
-    private ?int $draftId;
+    private ?int $draftId = null;
 
-    private ?int $leagueId;
+    private ?int $leagueId = null;
 
     public function getSeason(): string
     {

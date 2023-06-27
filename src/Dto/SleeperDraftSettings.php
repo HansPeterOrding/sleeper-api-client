@@ -3,53 +3,53 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
-class SleeperDraftSettings 
+class SleeperDraftSettings
 {
-    private ?int $teams;
+    private ?int $teams = null;
 
-    private ?int $slotsWr;
+    private ?int $slotsWr = null;
 
-    private ?int $slotsTe;
+    private ?int $slotsTe = null;
 
-    private ?int $slotsSuperFlex;
+    private ?int $slotsSuperFlex = null;
 
-    private ?int $slotsRecFlex;
+    private ?int $slotsRecFlex = null;
 
-    private ?int $slotsRb;
+    private ?int $slotsRb = null;
 
-    private ?int $slotsQb;
+    private ?int $slotsQb = null;
 
-    private ?int $slotsLb;
+    private ?int $slotsLb = null;
 
-    private ?int $slotsK;
+    private ?int $slotsK = null;
 
-    private ?int $slotsIdpFlex;
+    private ?int $slotsIdpFlex = null;
 
-    private ?int $slotsFlex;
+    private ?int $slotsFlex = null;
 
-    private ?int $slotsDl;
+    private ?int $slotsDl = null;
 
-    private ?int $slotsDb;
+    private ?int $slotsDb = null;
 
-    private ?int $slotsDef;
+    private ?int $slotsDef = null;
 
-    private ?int $slotsBn;
+    private ?int $slotsBn = null;
 
-    private ?int $rounds;
+    private ?int $rounds = null;
 
-    private ?int $reversalRound;
+    private ?int $reversalRound = null;
 
-    private ?int $playerType;
+    private ?int $playerType = null;
 
-    private ?int $pickTimer;
+    private ?int $pickTimer = null;
 
-    private ?int $nominationTimer;
+    private ?int $nominationTimer = null;
 
-    private ?int $enforcePositionLimis;
+    private ?int $enforcePositionLimits = null;
 
-    private ?int $cpuAutopick;
+    private ?int $cpuAutopick = null;
 
-    private ?int $alphaSort;
+    private ?int $alphaSort = null;
 
     public function getTeams(): ?int
     {
@@ -271,14 +271,14 @@ class SleeperDraftSettings
         return $this;
     }
 
-    public function getEnforcePositionLimis(): ?int
+    public function getEnforcePositionLimits(): ?int
     {
-        return $this->enforcePositionLimis;
+        return $this->enforcePositionLimits;
     }
 
-    public function setEnforcePositionLimis(?int $enforcePositionLimis): SleeperDraftSettings
+    public function setEnforcePositionLimits(?int $enforcePositionLimits): SleeperDraftSettings
     {
-        $this->enforcePositionLimis = $enforcePositionLimis;
+        $this->enforcePositionLimits = $enforcePositionLimits;
         return $this;
     }
 

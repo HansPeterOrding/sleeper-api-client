@@ -3,15 +3,15 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
-class SleeperDraftMetadata 
+class SleeperDraftMetadata
 {
-    private ?string $scoringType;
+    private ?string $scoringType = null;
 
-    private ?string $name;
+    private ?string $name = null;
 
-    private ?string $elapsedPickTimer;
+    private ?string $elapsedPickTimer = null;
 
-    private ?string $description;
+    private ?string $description = null;
 
     public function getScoringType(): ?string
     {
