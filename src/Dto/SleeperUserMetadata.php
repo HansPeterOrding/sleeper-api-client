@@ -11,13 +11,7 @@ class SleeperUserMetadata
     private ?string $transactionFreeAgent = null;
     private ?string $transactionCommissioner = null;
     private ?string $tradeBlockPn = null;
-<<<<<<< Updated upstream
-
     private ?string $teamName = null;
-
-=======
-    private ?string $teamName = null;
->>>>>>> Stashed changes
     private ?string $teamNameUpdate = null;
     private ?string $playerNicknameUpdate = null;
     private ?string $playerLikePn = null;

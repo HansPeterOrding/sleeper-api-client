@@ -6,71 +6,6 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 class SleeperLeagueSettings
 {
     private ?int $wasAutoArchived = null;
-<<<<<<< Updated upstream
-
-    private ?int $waiverType = null;
-
-    private ?int $waiverDayOfWeek = null;
-
-    private ?int $waiverClearDays = null;
-
-    private ?int $waiverBudget = null;
-
-    private ?int $type = null;
-
-    private ?int $tradeReviewDays = null;
-
-    private ?int $tradeDeadline = null;
-
-    private ?int $taxiYears = null;
-
-    private ?int $taxiSlots = null;
-
-    private ?int $taxiDeadline = null;
-
-    private ?int $taxiAllowVets = null;
-
-    private ?int $startWeek = null;
-
-    private ?int $reserveSlots = null;
-
-    private ?int $reserveAllowSus = null;
-
-    private ?int $reserveAllowOut = null;
-
-    private ?int $reserveAllowDoubtful = null;
-
-    private ?int $playoffWeekStart = null;
-
-    private ?int $playoffType = null;
-
-    private ?int $playoffTeams = null;
-
-    private ?int $pickTrading = null;
-
-    private ?int $offseasonAdds = null;
-
-    private ?int $numTeams = null;
-
-    private ?int $maxKeepers = null;
-
-    private ?int $leg = null;
-
-    private ?int $leagueAverageMatch = null;
-
-    private ?int $lastScoredLeg = null;
-
-    private ?int $lastReport = null;
-
-    private ?int $draftRounds = null;
-
-    private ?int $dailyWaiversHour = null;
-
-    private ?int $dailyWaivers = null;
-
-    private ?int $benchLock = null;
-
-=======
     private ?int $waiverType = null;
     private ?int $waiverDayOfWeek = null;
     private ?int $waiverClearDays = null;
@@ -103,7 +38,6 @@ class SleeperLeagueSettings
     private ?int $dailyWaivers = null;
     private ?int $benchLock = null;
 
->>>>>>> Stashed changes
     public function getWasAutoArchived(): ?int
     {
         return $this->wasAutoArchived;

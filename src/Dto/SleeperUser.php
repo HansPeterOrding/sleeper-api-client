@@ -9,16 +9,6 @@ class SleeperUser
     private ?string $userId = null;
     private ?string $username = null;
     private ?string $verification = null;
-<<<<<<< Updated upstream
-
-    private SleeperUserMetadata $metadata;
-
-    private ?string $username = null;
-
-    private string $userId;
-
-=======
->>>>>>> Stashed changes
     private ?string $token = null;
     private ?string $summonerRegion = null;
     private ?string $summonerName = null;
@@ -89,43 +79,7 @@ class SleeperUser
         $this->verification = $verification;
         return $this;
     }
-
-<<<<<<< Updated upstream
-    public function getMetadata(): SleeperUserMetadata
-    {
-        return $this->metadata;
-    }
-
-    public function setMetadata(SleeperUserMetadata $metadata): SleeperUser
-    {
-        $this->metadata = $metadata;
-        return $this;
-    }
-
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
-
-    public function setUsername(?string $username): SleeperUser
-    {
-        $this->username = $username;
-        return $this;
-    }
-
-    public function getUserId(): string
-    {
-        return $this->userId;
-    }
-
-    public function setUserId(string $userId): SleeperUser
-    {
-        $this->userId = $userId;
-        return $this;
-    }
-
-=======
->>>>>>> Stashed changes
+    
     public function getToken(): ?string
     {
         return $this->token;
