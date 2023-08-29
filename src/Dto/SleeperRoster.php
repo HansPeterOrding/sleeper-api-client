@@ -6,29 +6,13 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 class SleeperRoster
 {
     private int $rosterId;
-<<<<<<< Updated upstream
-
-    private ?string $ownerId;
-
-    private string $leagueId;
-
-    private ?array $starters = [];
-
-    private ?array $reserve = [];
-
-    private ?array $players = [];
-
-=======
     private ?string $ownerId = null;
     private string $leagueId;
     private ?array $starters = [];
     private ?array $reserve = [];
     private ?array $players = [];
     private ?array $coOwners = [];
->>>>>>> Stashed changes
     private SleeperRosterSettings $settings;
-
-    private ?array $coOwners = [];
 
     public function getRosterId(): int
     {
@@ -115,17 +99,6 @@ class SleeperRoster
     public function setSettings(SleeperRosterSettings $settings): SleeperRoster
     {
         $this->settings = $settings;
-        return $this;
-    }
-
-    public function getCoOwners(): ?array
-    {
-        return $this->coOwners;
-    }
-
-    public function setCoOwners(?array $coOwners): SleeperRoster
-    {
-        $this->coOwners = $coOwners;
         return $this;
     }
 }
