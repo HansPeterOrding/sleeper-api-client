@@ -6,71 +6,44 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 class SleeperUserMetadata
 {
     private ?string $userMessagePn = null;
-
     private ?string $transactionWaiver = null;
-
     private ?string $transactionTrade = null;
-
     private ?string $transactionFreeAgent = null;
-
     private ?string $transactionCommissioner = null;
-
     private ?string $tradeBlockPn = null;
+<<<<<<< Updated upstream
 
     private ?string $teamName = null;
 
+=======
+    private ?string $teamName = null;
+>>>>>>> Stashed changes
     private ?string $teamNameUpdate = null;
-
     private ?string $playerNicknameUpdate = null;
-
     private ?string $playerLikePn = null;
-
     private ?string $mentionPn = null;
-
     private ?string $mascotMessage = null;
-
     private ?string $joinVoicePn = null;
-
     private ?string $archived = null;
-
     private ?string $allowPn = null;
-
     private ?string $mascotMessageEmotionLeg1 = null;
-
     private ?string $mascotItemTypeIdLeg1 = null;
-
     private ?string $mascotItemTypeIdLeg2 = null;
-
     private ?string $mascotItemTypeIdLeg3 = null;
-
     private ?string $mascotItemTypeIdLeg4 = null;
-
     private ?string $mascotItemTypeIdLeg5 = null;
-
     private ?string $mascotItemTypeIdLeg6 = null;
-
     private ?string $mascotItemTypeIdLeg7 = null;
-
     private ?string $mascotItemTypeIdLeg8 = null;
-
     private ?string $mascotItemTypeIdLeg9 = null;
-
     private ?string $mascotItemTypeIdLeg10 = null;
-
     private ?string $mascotItemTypeIdLeg11 = null;
-
     private ?string $mascotItemTypeIdLeg12 = null;
-
     private ?string $mascotItemTypeIdLeg13 = null;
-
     private ?string $mascotItemTypeIdLeg14 = null;
-
     private ?string $mascotItemTypeIdLeg15 = null;
-
     private ?string $mascotItemTypeIdLeg16 = null;
-
     private ?string $mascotItemTypeIdLeg17 = null;
-
     private ?string $mascotItemTypeIdLeg18 = null;
 
     public function getUserMessagePn(): ?string

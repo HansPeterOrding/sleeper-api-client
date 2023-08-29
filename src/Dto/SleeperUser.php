@@ -5,7 +5,11 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 class SleeperUser
 {
+    private ?int $id = null;
+    private ?string $userId = null;
+    private ?string $username = null;
     private ?string $verification = null;
+<<<<<<< Updated upstream
 
     private SleeperUserMetadata $metadata;
 
@@ -13,27 +17,20 @@ class SleeperUser
 
     private string $userId;
 
+=======
+>>>>>>> Stashed changes
     private ?string $token = null;
-
     private ?string $summonerRegion = null;
-
     private ?string $summonerName = null;
-
     private ?string $solicitable = null;
-
     private ?string $realName = null;
-
     private ?string $phone = null;
-
     private ?string $pending = null;
-
     private ?bool $isBot;
-
     private ?string $email = null;
-
     private ?string $displayName = null;
-
     private ?string $avatar = null;
+    private SleeperUserMetadata $metadata;
 
     public function __get($name)
     {
@@ -49,6 +46,39 @@ class SleeperUser
         return isset($this->data[$name]);
     }
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function setId(?int $id): SleeperUser
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getUserId(): ?string
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(?string $userId): SleeperUser
+    {
+        $this->userId = $userId;
+        return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(?string $username): SleeperUser
+    {
+        $this->username = $username;
+        return $this;
+    }
+
     public function getVerification(): ?string
     {
         return $this->verification;
@@ -60,6 +90,7 @@ class SleeperUser
         return $this;
     }
 
+<<<<<<< Updated upstream
     public function getMetadata(): SleeperUserMetadata
     {
         return $this->metadata;
@@ -93,6 +124,8 @@ class SleeperUser
         return $this;
     }
 
+=======
+>>>>>>> Stashed changes
     public function getToken(): ?string
     {
         return $this->token;
@@ -211,6 +244,17 @@ class SleeperUser
     public function setAvatar(?string $avatar): SleeperUser
     {
         $this->avatar = $avatar;
+        return $this;
+    }
+
+    public function getMetadata(): SleeperUserMetadata
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(SleeperUserMetadata $metadata): SleeperUser
+    {
+        $this->metadata = $metadata;
         return $this;
     }
 }

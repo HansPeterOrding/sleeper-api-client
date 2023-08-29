@@ -6,6 +6,7 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 class SleeperRoster
 {
     private int $rosterId;
+<<<<<<< Updated upstream
 
     private ?string $ownerId;
 
@@ -17,6 +18,14 @@ class SleeperRoster
 
     private ?array $players = [];
 
+=======
+    private ?string $ownerId = null;
+    private string $leagueId;
+    private ?array $starters = [];
+    private ?array $reserve = [];
+    private ?array $players = [];
+    private ?array $coOwners = [];
+>>>>>>> Stashed changes
     private SleeperRosterSettings $settings;
 
     private ?array $coOwners = [];
@@ -84,6 +93,17 @@ class SleeperRoster
     public function setPlayers(?array $players): SleeperRoster
     {
         $this->players = $players;
+        return $this;
+    }
+
+    public function getCoOwners(): ?array
+    {
+        return $this->coOwners;
+    }
+
+    public function setCoOwners(?array $coOwners): SleeperRoster
+    {
+        $this->coOwners = $coOwners;
         return $this;
     }
 

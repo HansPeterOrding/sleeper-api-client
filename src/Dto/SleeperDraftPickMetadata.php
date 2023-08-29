@@ -7,27 +7,29 @@ use DateTime;
 
 class SleeperDraftPickMetadata 
 {
-    private ?string $yearsExp;
+    private ?string $yearsExp = null;
 
-    private ?string $team;
+    private ?string $team = null;
 
-    private ?string $status;
+    private ?string $status = null;
 
-    private ?string $sport;
+    private ?string $sport = null;
 
-    private ?string $position;
+    private ?string $position = null;
 
-    private ?string $playerId;
+    private ?string $playerId = null;
 
-    private ?string $number;
+    private ?string $number = null;
 
-    private ?string $newsUpdated;
+    private ?string $newsUpdated = null;
 
-    private ?string $lastName;
+    private ?string $lastName = null;
 
-    private ?string $injuryStatus;
+    private ?string $injuryStatus = null;
 
-    private ?string $firstName;
+    private ?string $firstName = null;
+
+    private ?string $amount = null;
 
     public function getYearsExp(): ?string
     {
@@ -147,6 +149,17 @@ class SleeperDraftPickMetadata
     public function setFirstName(?string $firstName): SleeperDraftPickMetadata
     {
         $this->firstName = $firstName;
+        return $this;
+    }
+
+    public function getAmount(): ?string
+    {
+        return $this->amount;
+    }
+
+    public function setAmount(?string $amount): SleeperDraftPickMetadata
+    {
+        $this->amount = $amount;
         return $this;
     }
 }

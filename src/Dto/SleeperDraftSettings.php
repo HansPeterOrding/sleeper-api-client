@@ -6,6 +6,7 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 class SleeperDraftSettings
 {
     private ?int $teams = null;
+<<<<<<< Updated upstream
 
     private ?int $slotsWr = null;
 
@@ -49,6 +50,29 @@ class SleeperDraftSettings
 
     private ?int $cpuAutopick = null;
 
+=======
+    private ?int $slotsWr = null;
+    private ?int $slotsTe = null;
+    private ?int $slotsSuperFlex = null;
+    private ?int $slotsRecFlex = null;
+    private ?int $slotsRb = null;
+    private ?int $slotsQb = null;
+    private ?int $slotsLb = null;
+    private ?int $slotsK = null;
+    private ?int $slotsIdpFlex = null;
+    private ?int $slotsFlex = null;
+    private ?int $slotsDl = null;
+    private ?int $slotsDb = null;
+    private ?int $slotsDef = null;
+    private ?int $slotsBn = null;
+    private ?int $rounds = null;
+    private ?int $reversalRound = null;
+    private ?int $playerType = null;
+    private ?int $pickTimer = null;
+    private ?int $nominationTimer = null;
+    private ?int $enforcePositionLimits = null;
+    private ?int $cpuAutopick = null;
+>>>>>>> Stashed changes
     private ?int $alphaSort = null;
 
     public function getTeams(): ?int

@@ -6,6 +6,7 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 class SleeperRosterSettings
 {
     private int $wins = 0;
+<<<<<<< Updated upstream
 
     private int $waiverPosition = 0;
 
@@ -23,6 +24,16 @@ class SleeperRosterSettings
 
     private int $fptsAgainst = 0;
 
+=======
+    private int $waiverPosition = 0;
+    private int $waiverBudgetUsed = 0;
+    private int $totalMoves = 0;
+    private int $ties = 0;
+    private int $losses = 0;
+    private int $fptsDecimal = 0;
+    private int $fptsAgainstDecimal = 0;
+    private int $fptsAgainst = 0;
+>>>>>>> Stashed changes
     private int $fpts = 0;
 
     public function getWins(): int
