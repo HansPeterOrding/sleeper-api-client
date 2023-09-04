@@ -33,6 +33,11 @@ class SleeperPlayerProjection
 
     private ?string $category;
 
+    public function __construct()
+    {
+        $this->stats = new SleeperStats();
+    }
+
     public function getWeek(): ?int
     {
         return $this->week;
