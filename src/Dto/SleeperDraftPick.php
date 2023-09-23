@@ -3,21 +3,21 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
-class SleeperDraftPick 
+class SleeperDraftPick
 {
     private int $round;
 
-    private int $rosterId;
+    private ?int $rosterId = null;
 
-    private ?string $playerId;
+    private ?string $playerId = null;
 
-    private ?string $pickedBy;
+    private ?string $pickedBy = null;
 
     private int $pickNo;
 
     private SleeperDraftPickMetadata $metadata;
 
-    private ?bool $isKeeper;
+    private ?bool $isKeeper = null;
 
     private int $draftSlot;
 
@@ -34,12 +34,12 @@ class SleeperDraftPick
         return $this;
     }
 
-    public function getRosterId(): int
+    public function getRosterId(): ?int
     {
         return $this->rosterId;
     }
 
-    public function setRosterId(int $rosterId): SleeperDraftPick
+    public function setRosterId(?int $rosterId): SleeperDraftPick
     {
         $this->rosterId = $rosterId;
         return $this;

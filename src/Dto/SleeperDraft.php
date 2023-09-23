@@ -5,7 +5,7 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 use DateTime;
 
-class SleeperDraft 
+class SleeperDraft
 {
     private string $type;
 
@@ -25,7 +25,7 @@ class SleeperDraft
 
     private SleeperDraftMetadata $metadata;
 
-    private string $leagueId;
+    private ?string $leagueId = null;
 
     private ?int $lastPicked;
 
@@ -140,12 +140,12 @@ class SleeperDraft
         return $this;
     }
 
-    public function getLeagueId(): string
+    public function getLeagueId(): ?string
     {
         return $this->leagueId;
     }
 
-    public function setLeagueId(string $leagueId): SleeperDraft
+    public function setLeagueId(?string $leagueId): SleeperDraft
     {
         $this->leagueId = $leagueId;
         return $this;
