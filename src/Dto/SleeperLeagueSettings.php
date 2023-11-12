@@ -24,6 +24,7 @@ class SleeperLeagueSettings
     private ?int $reserveAllowDoubtful = null;
     private ?int $playoffWeekStart = null;
     private ?int $playoffType = null;
+    private ?int $playoffRoundType = null;
     private ?int $playoffTeams = null;
     private ?int $pickTrading = null;
     private ?int $offseasonAdds = null;
@@ -244,6 +245,17 @@ class SleeperLeagueSettings
     public function setPlayoffType(?int $playoffType): SleeperLeagueSettings
     {
         $this->playoffType = $playoffType;
+        return $this;
+    }
+
+    public function getPlayoffRoundType(): ?int
+    {
+        return $this->playoffRoundType;
+    }
+
+    public function setPlayoffRoundType(?int $playoffRoundType): SleeperLeagueSettings
+    {
+        $this->playoffRoundType = $playoffRoundType;
         return $this;
     }
 
