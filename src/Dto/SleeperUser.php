@@ -79,7 +79,7 @@ class SleeperUser
         $this->verification = $verification;
         return $this;
     }
-    
+
     public function getToken(): ?string
     {
         return $this->token;

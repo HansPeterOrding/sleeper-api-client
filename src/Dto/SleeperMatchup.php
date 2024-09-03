@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
-class SleeperMatchup 
+class SleeperMatchup
 {
     private ?array $startersPoints = [];
 
