@@ -5,14 +5,14 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 class SleeperTransactionMetadata
 {
-    private string $notes;
+    private ?string $notes = null;
 
-    public function getNotes(): string
+    public function getNotes(): ?string
     {
         return $this->notes;
     }
 
-    public function setNotes(string $notes): SleeperTransactionMetadata
+    public function setNotes(?string $notes): SleeperTransactionMetadata
     {
         $this->notes = $notes;
         return $this;

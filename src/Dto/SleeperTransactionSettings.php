@@ -5,11 +5,11 @@ namespace HansPeterOrding\SleeperApiClient\Dto;
 
 class SleeperTransactionSettings
 {
-    private ?int $waiverBid;
+    private ?int $waiverBid = null;
 
-    private ?int $seq;
+    private ?int $seq = null;
 
-    private ?int $priority;
+    private ?int $priority = null;
 
     public function getWaiverBid(): ?int
     {

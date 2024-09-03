@@ -40,6 +40,13 @@ class SleeperTransaction
 
     private ?array $adds;
 
+    public function __construct()
+    {
+        $this->waiverBudget = new SleeperTransactionWaiverBudget();
+        $this->settings = new SleeperTransactionSettings();
+        $this->metadata = new SleeperTransactionMetadata();
+    }
+
     public function getWaiverBudget(): SleeperTransactionWaiverBudget
     {
         return $this->waiverBudget;
