@@ -38,6 +38,7 @@ class SleeperLeagueSettings
     private ?int $dailyWaiversHour = null;
     private ?int $dailyWaivers = null;
     private ?int $benchLock = null;
+    private ?int $bestBall = null;
 
     public function getWasAutoArchived(): ?int
     {
@@ -399,6 +400,17 @@ class SleeperLeagueSettings
     public function setBenchLock(?int $benchLock): SleeperLeagueSettings
     {
         $this->benchLock = $benchLock;
+        return $this;
+    }
+
+    public function getBestBall(): ?int
+    {
+        return $this->bestBall;
+    }
+
+    public function setBestBall(?int $bestBall): SleeperLeagueSettings
+    {
+        $this->bestBall = $bestBall;
         return $this;
     }
 }
