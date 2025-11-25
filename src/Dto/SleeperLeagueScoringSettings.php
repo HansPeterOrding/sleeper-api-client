@@ -55,6 +55,8 @@ class SleeperLeagueScoringSettings
     private ?float $fgm3039 = null;
     private ?float $fgm4049 = null;
     private ?float $fgm50p = null;
+    private ?float $fgm5059 = null;
+    private ?float $fgm60p = null;
     private ?float $fgmYds = null;
     private ?float $fgmYdsOver30 = null;
     private ?float $xpm = null;
@@ -64,6 +66,8 @@ class SleeperLeagueScoringSettings
     private ?float $fgmiss3039 = null;
     private ?float $fgmiss4049 = null;
     private ?float $fgmiss50p = null;
+    private ?float $fgmiss5059 = null;
+    private ?float $fgmiss60p = null;
     private ?float $xpmiss = null;
 
     // Team defense
@@ -115,6 +119,8 @@ class SleeperLeagueScoringSettings
     private ?float $defStTklSolo = null;
     private ?float $defPrYd = null;
     private ?float $defKrYd = null;
+    private ?float $defKrTd = null;
+    private ?float $defPrTd = null;
 
     // Special Teams Player
     private ?float $stTd = null;
@@ -123,6 +129,8 @@ class SleeperLeagueScoringSettings
     private ?float $stTklSolo = null;
     private ?float $prYd = null;
     private ?float $krYd = null;
+    private ?float $krTd = null;
+    private ?float $prTd = null;
 
     // Misc
     private ?float $fum = null;
@@ -641,6 +649,26 @@ class SleeperLeagueScoringSettings
         return $this;
     }
 
+    public function getFgm5059(): ?float
+    {
+        return $this->fgm5059;
+    }
+
+    public function setFgm5059(?float $fgm5059): void
+    {
+        $this->fgm5059 = $fgm5059;
+    }
+
+    public function getFgm60p(): ?float
+    {
+        return $this->fgm60p;
+    }
+
+    public function setFgm60p(?float $fgm60p): void
+    {
+        $this->fgm60p = $fgm60p;
+    }
+
     public function getFgmYds(): ?float
     {
         return $this->fgmYds;
@@ -738,6 +766,26 @@ class SleeperLeagueScoringSettings
     {
         $this->fgmiss50p = $fgmiss50p;
         return $this;
+    }
+
+    public function getFgmiss5059(): ?float
+    {
+        return $this->fgmiss5059;
+    }
+
+    public function setFgmiss5059(?float $fgmiss5059): void
+    {
+        $this->fgmiss5059 = $fgmiss5059;
+    }
+
+    public function getFgmiss60p(): ?float
+    {
+        return $this->fgmiss60p;
+    }
+
+    public function setFgmiss60p(?float $fgmiss60p): void
+    {
+        $this->fgmiss60p = $fgmiss60p;
     }
 
     public function getXpmiss(): ?float
@@ -1257,6 +1305,26 @@ class SleeperLeagueScoringSettings
         return $this;
     }
 
+    public function getDefKrTd(): ?float
+    {
+        return $this->defKrTd;
+    }
+
+    public function setDefKrTd(?float $defKrTd): void
+    {
+        $this->defKrTd = $defKrTd;
+    }
+
+    public function getDefPrTd(): ?float
+    {
+        return $this->defPrTd;
+    }
+
+    public function setDefPrTd(?float $defPrTd): void
+    {
+        $this->defPrTd = $defPrTd;
+    }
+
     public function getStTd(): ?float
     {
         return $this->stTd;
@@ -1321,6 +1389,26 @@ class SleeperLeagueScoringSettings
     {
         $this->krYd = $krYd;
         return $this;
+    }
+
+    public function getKrTd(): ?float
+    {
+        return $this->krTd;
+    }
+
+    public function setKrTd(?float $krTd): void
+    {
+        $this->krTd = $krTd;
+    }
+
+    public function getPrTd(): ?float
+    {
+        return $this->prTd;
+    }
+
+    public function setPrTd(?float $prTd): void
+    {
+        $this->prTd = $prTd;
     }
 
     public function getFum(): ?float

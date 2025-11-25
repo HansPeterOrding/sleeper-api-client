@@ -14,12 +14,16 @@ class SleeperStats
     private ?float $ptsStd = null;
     private ?float $ptsHalfPpr = null;
     private ?float $ptsPpr = null;
+    private ?float $ptsIdp = null;
+    private ?float $kickPts = null;
 
     // Ranks
     private ?float $rankStd = null;
     private ?float $rankPpr = null;
+    private ?float $rankHalfPpr = null;
     private ?float $posRankStd = null;
     private ?float $posRankPpr = null;
+    private ?float $posRankHalfPpr = null;
 
     // Snap
     private ?float $offSnp = null;
@@ -27,6 +31,7 @@ class SleeperStats
     private ?float $tmOffSnp = null;
     private ?float $tmDefSnp = null;
     private ?float $tmStSnp = null;
+    private ?float $stSnp = null;
 
     // Penalty
     private ?float $penalty = null;
@@ -38,6 +43,13 @@ class SleeperStats
 
     // Passing
     private ?float $passYd = null;
+    private ?float $passYpa = null;
+    private ?float $passYpc = null;
+    private ?float $passAirYd = null;
+    private ?float $passLng = null;
+    private ?float $passRtg = null;
+    private ?float $passRushYd = null;
+    private ?float $passRzAtt = null;
     private ?float $passTd = null;
     private ?float $passFd = null;
     private ?float $pass2pt = null;
@@ -47,20 +59,31 @@ class SleeperStats
     private ?float $passInc = null;
     private ?float $passAtt = null;
     private ?float $passSack = null;
+    private ?float $passSackYds = null;
     private ?float $passCmp40p = null;
     private ?float $passTd40p = null;
     private ?float $passTd50p = null;
+    private ?float $passTdLng = null;
     private ?float $cmpPct = null;
 
     // Rushing
     private ?float $rushYd = null;
     private ?float $rushTd = null;
+    private ?float $rushTdLng = null;
     private ?float $rushFd = null;
     private ?float $rush2pt = null;
     private ?float $rushAtt = null;
+    private ?float $rushBtkl = null;
+    private ?float $rushLng = null;
+    private ?float $rushRecYd = null;
+    private ?float $rushRzAtt = null;
     private ?float $rush40p = null;
     private ?float $rushTd40p = null;
     private ?float $rushTd50p = null;
+    private ?float $rushTklLoss = null;
+    private ?float $rushTklLossYd = null;
+    private ?float $rushYac = null;
+    private ?float $rushYpa = null;
 
     // Receiving
     private ?float $rec = null;
@@ -90,21 +113,29 @@ class SleeperStats
     private ?float $recYar = null;
 
     // Kicking
+    private ?float $fga = null;
     private ?float $fgm = null;
     private ?float $fgm019 = null;
     private ?float $fgm2029 = null;
     private ?float $fgm3039 = null;
     private ?float $fgm4049 = null;
     private ?float $fgm50p = null;
+    private ?float $fgm5059 = null;
+    private ?float $fgmLng = null;
+    private ?float $fgmPct = null;
     private ?float $fgmYds = null;
     private ?float $fgmYdsOver30 = null;
     private ?float $xpm = null;
+    private ?float $xpBlkd = null;
+    private ?float $xpa = null;
     private ?float $fgmiss = null;
     private ?float $fgmiss019 = null;
     private ?float $fgmiss2029 = null;
     private ?float $fgmiss3039 = null;
     private ?float $fgmiss4049 = null;
     private ?float $fgmiss50p = null;
+    private ?float $fgmiss5059 = null;
+    private ?float $fgmiss60p = null;
     private ?float $xpmiss = null;
 
     // Team defense
@@ -138,10 +169,13 @@ class SleeperStats
     private ?float $fumRetYd = null;
     private ?float $tklLoss = null;
     private ?float $tklAst = null;
+    private ?float $tklAstMisc = null;
     private ?float $tklSolo = null;
+    private ?float $tklSoloMisc = null;
     private ?float $tkl = null;
     private ?float $safe = null;
     private ?float $ff = null;
+    private ?float $ffMisc = null;
     private ?float $blkKick = null;
     private ?float $defForcedPunts = null;
     private ?float $defPassDef = null;
@@ -155,22 +189,43 @@ class SleeperStats
     private ?float $defStFf = null;
     private ?float $defStFumRec = null;
     private ?float $defStTklSolo = null;
+    private ?float $defPr = null;
+    private ?float $defPrTd = null;
     private ?float $defPrYd = null;
+    private ?float $defPrLng = null;
+    private ?float $defPrYpa = null;
+    private ?float $defKr = null;
+    private ?float $defKrTd = null;
     private ?float $defKrYd = null;
+    private ?float $defKrLng = null;
+    private ?float $defKrYpa = null;
+
+
 
     // Special Teams Player
     private ?float $stTd = null;
     private ?float $stFf = null;
     private ?float $stFumRec = null;
     private ?float $stTklSolo = null;
-    private ?float $prYd = null;
-    private ?float $krYd = null;
     private ?float $pr = null;
+    private ?float $prTd = null;
+    private ?float $prYd = null;
+    private ?float $prLng = null;
+    private ?float $prYpa = null;
+    private ?float $kr = null;
+    private ?float $krTd = null;
+    private ?float $krYd = null;
+    private ?float $krLng = null;
+    private ?float $krYpa = null;
+
 
     // Misc
+    private ?float $td = null;
     private ?float $fum = null;
     private ?float $fumLost = null;
     private ?float $fumRecTd = null;
+    private ?float $anytimeTds = null;
+    private ?float $firstTd = null;
 
     // Bonus
     private ?float $bonusRushYd100 = null;
@@ -210,6 +265,15 @@ class SleeperStats
     private ?float $idpPassDef3p = null;
     private ?float $bonusDefIntTd50p = null;
     private ?float $bonusDefFumTd50p = null;
+
+    // Fantasy Points allowed
+    private ?float $fanPtsAllow = null;
+    private ?float $fanPtsAllowDef = null;
+    private ?float $fanPtsAllowK = null;
+    private ?float $fanPtsAllowQb = null;
+    private ?float $fanPtsAllowRb = null;
+    private ?float $fanPtsAllowTe = null;
+    private ?float $fanPtsAllowWr = null;
 
     public function getGp(): ?float
     {
@@ -277,6 +341,28 @@ class SleeperStats
         return $this;
     }
 
+    public function getPtsIdp(): ?float
+    {
+        return $this->ptsIdp;
+    }
+
+    public function setPtsIdp(?float $ptsIdp): SleeperStats
+    {
+        $this->ptsIdp = $ptsIdp;
+        return $this;
+    }
+
+    public function getKickPts(): ?float
+    {
+        return $this->kickPts;
+    }
+
+    public function setKickPts(?float $kickPts): SleeperStats
+    {
+        $this->kickPts = $kickPts;
+        return $this;
+    }
+
     public function getRankStd(): ?float
     {
         return $this->rankStd;
@@ -299,6 +385,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getRankHalfPpr(): ?float
+    {
+        return $this->rankHalfPpr;
+    }
+
+    public function setRankHalfPpr(?float $rankHalfPpr): SleeperStats
+    {
+        $this->rankHalfPpr = $rankHalfPpr;
+        return $this;
+    }
+
     public function getPosRankStd(): ?float
     {
         return $this->posRankStd;
@@ -318,6 +415,17 @@ class SleeperStats
     public function setPosRankPpr(?float $posRankPpr): SleeperStats
     {
         $this->posRankPpr = $posRankPpr;
+        return $this;
+    }
+
+    public function getPosRankHalfPpr(): ?float
+    {
+        return $this->posRankHalfPpr;
+    }
+
+    public function setPosRankHalfPpr(?float $posRankHalfPpr): SleeperStats
+    {
+        $this->posRankHalfPpr = $posRankHalfPpr;
         return $this;
     }
 
@@ -376,6 +484,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getStSnp(): ?float
+    {
+        return $this->stSnp;
+    }
+
+    public function setStSnp(?float $stSnp): SleeperStats
+    {
+        $this->stSnp = $stSnp;
+        return $this;
+    }
+
     public function getPenalty(): ?float
     {
         return $this->penalty;
@@ -428,6 +547,83 @@ class SleeperStats
     public function setPassYd(?float $passYd): SleeperStats
     {
         $this->passYd = $passYd;
+        return $this;
+    }
+
+    public function getPassYpa(): ?float
+    {
+        return $this->passYpa;
+    }
+
+    public function setPassYpa(?float $passYpa): SleeperStats
+    {
+        $this->passYpa = $passYpa;
+        return $this;
+    }
+
+    public function getPassYpc(): ?float
+    {
+        return $this->passYpc;
+    }
+
+    public function setPassYpc(?float $passYpc): SleeperStats
+    {
+        $this->passYpc = $passYpc;
+        return $this;
+    }
+
+    public function getPassAirYd(): ?float
+    {
+        return $this->passAirYd;
+    }
+
+    public function setPassAirYd(?float $passAirYd): SleeperStats
+    {
+        $this->passAirYd = $passAirYd;
+        return $this;
+    }
+
+    public function getPassLng(): ?float
+    {
+        return $this->passLng;
+    }
+
+    public function setPassLng(?float $passLng): SleeperStats
+    {
+        $this->passLng = $passLng;
+        return $this;
+    }
+
+    public function getPassRtg(): ?float
+    {
+        return $this->passRtg;
+    }
+
+    public function setPassRtg(?float $passRtg): SleeperStats
+    {
+        $this->passRtg = $passRtg;
+        return $this;
+    }
+
+    public function getPassRushYd(): ?float
+    {
+        return $this->passRushYd;
+    }
+
+    public function setPassRushYd(?float $passRushYd): SleeperStats
+    {
+        $this->passRushYd = $passRushYd;
+        return $this;
+    }
+
+    public function getPassRzAtt(): ?float
+    {
+        return $this->passRzAtt;
+    }
+
+    public function setPassRzAtt(?float $passRzAtt): SleeperStats
+    {
+        $this->passRzAtt = $passRzAtt;
         return $this;
     }
 
@@ -530,6 +726,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getPassSackYds(): ?float
+    {
+        return $this->passSackYds;
+    }
+
+    public function setPassSackYds(?float $passSackYds): SleeperStats
+    {
+        $this->passSackYds = $passSackYds;
+        return $this;
+    }
+
     public function getPassCmp40p(): ?float
     {
         return $this->passCmp40p;
@@ -560,6 +767,17 @@ class SleeperStats
     public function setPassTd50p(?float $passTd50p): SleeperStats
     {
         $this->passTd50p = $passTd50p;
+        return $this;
+    }
+
+    public function getPassTdLng(): ?float
+    {
+        return $this->passTdLng;
+    }
+
+    public function setPassTdLng(?float $passTdLng): SleeperStats
+    {
+        $this->passTdLng = $passTdLng;
         return $this;
     }
 
@@ -596,6 +814,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getRushTdLng(): ?float
+    {
+        return $this->rushTdLng;
+    }
+
+    public function setRushTdLng(?float $rushTdLng): SleeperStats
+    {
+        $this->rushTdLng = $rushTdLng;
+        return $this;
+    }
+
     public function getRushFd(): ?float
     {
         return $this->rushFd;
@@ -629,6 +858,50 @@ class SleeperStats
         return $this;
     }
 
+    public function getRushBtkl(): ?float
+    {
+        return $this->rushBtkl;
+    }
+
+    public function setRushBtkl(?float $rushBtkl): SleeperStats
+    {
+        $this->rushBtkl = $rushBtkl;
+        return $this;
+    }
+
+    public function getRushLng(): ?float
+    {
+        return $this->rushLng;
+    }
+
+    public function setRushLng(?float $rushLng): SleeperStats
+    {
+        $this->rushLng = $rushLng;
+        return $this;
+    }
+
+    public function getRushRecYd(): ?float
+    {
+        return $this->rushRecYd;
+    }
+
+    public function setRushRecYd(?float $rushRecYd): SleeperStats
+    {
+        $this->rushRecYd = $rushRecYd;
+        return $this;
+    }
+
+    public function getRushRzAtt(): ?float
+    {
+        return $this->rushRzAtt;
+    }
+
+    public function setRushRzAtt(?float $rushRzAtt): SleeperStats
+    {
+        $this->rushRzAtt = $rushRzAtt;
+        return $this;
+    }
+
     public function getRush40p(): ?float
     {
         return $this->rush40p;
@@ -659,6 +932,50 @@ class SleeperStats
     public function setRushTd50p(?float $rushTd50p): SleeperStats
     {
         $this->rushTd50p = $rushTd50p;
+        return $this;
+    }
+
+    public function getRushTklLoss(): ?float
+    {
+        return $this->rushTklLoss;
+    }
+
+    public function setRushTklLoss(?float $rushTklLoss): SleeperStats
+    {
+        $this->rushTklLoss = $rushTklLoss;
+        return $this;
+    }
+
+    public function getRushTklLossYd(): ?float
+    {
+        return $this->rushTklLossYd;
+    }
+
+    public function setRushTklLossYd(?float $rushTklLossYd): SleeperStats
+    {
+        $this->rushTklLossYd = $rushTklLossYd;
+        return $this;
+    }
+
+    public function getRushYac(): ?float
+    {
+        return $this->rushYac;
+    }
+
+    public function setRushYac(?float $rushYac): SleeperStats
+    {
+        $this->rushYac = $rushYac;
+        return $this;
+    }
+
+    public function getRushYpa(): ?float
+    {
+        return $this->rushYpa;
+    }
+
+    public function setRushYpa(?float $rushYpa): SleeperStats
+    {
+        $this->rushYpa = $rushYpa;
         return $this;
     }
 
@@ -937,6 +1254,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getFga(): ?float
+    {
+        return $this->fga;
+    }
+
+    public function setFga(?float $fga): SleeperStats
+    {
+        $this->fga = $fga;
+        return $this;
+    }
+
     public function getFgm(): ?float
     {
         return $this->fgm;
@@ -1003,6 +1331,39 @@ class SleeperStats
         return $this;
     }
 
+    public function getFgm5059(): ?float
+    {
+        return $this->fgm5059;
+    }
+
+    public function setFgm5059(?float $fgm5059): SleeperStats
+    {
+        $this->fgm5059 = $fgm5059;
+        return $this;
+    }
+
+    public function getFgmLng(): ?float
+    {
+        return $this->fgmLng;
+    }
+
+    public function setFgmLng(?float $fgmLng): SleeperStats
+    {
+        $this->fgmLng = $fgmLng;
+        return $this;
+    }
+
+    public function getFgmPct(): ?float
+    {
+        return $this->fgmPct;
+    }
+
+    public function setFgmPct(?float $fgmPct): SleeperStats
+    {
+        $this->fgmPct = $fgmPct;
+        return $this;
+    }
+
     public function getFgmYds(): ?float
     {
         return $this->fgmYds;
@@ -1033,6 +1394,28 @@ class SleeperStats
     public function setXpm(?float $xpm): SleeperStats
     {
         $this->xpm = $xpm;
+        return $this;
+    }
+
+    public function getXpBlkd(): ?float
+    {
+        return $this->xpBlkd;
+    }
+
+    public function setXpBlkd(?float $xpBlkd): SleeperStats
+    {
+        $this->xpBlkd = $xpBlkd;
+        return $this;
+    }
+
+    public function getXpa(): ?float
+    {
+        return $this->xpa;
+    }
+
+    public function setXpa(?float $xpa): SleeperStats
+    {
+        $this->xpa = $xpa;
         return $this;
     }
 
@@ -1099,6 +1482,28 @@ class SleeperStats
     public function setFgmiss50p(?float $fgmiss50p): SleeperStats
     {
         $this->fgmiss50p = $fgmiss50p;
+        return $this;
+    }
+
+    public function getFgmiss5059(): ?float
+    {
+        return $this->fgmiss5059;
+    }
+
+    public function setFgmiss5059(?float $fgmiss5059): SleeperStats
+    {
+        $this->fgmiss5059 = $fgmiss5059;
+        return $this;
+    }
+
+    public function getFgmiss60p(): ?float
+    {
+        return $this->fgmiss60p;
+    }
+
+    public function setFgmiss60p(?float $fgmiss60p): SleeperStats
+    {
+        $this->fgmiss60p = $fgmiss60p;
         return $this;
     }
 
@@ -1443,6 +1848,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getTklAstMisc(): ?float
+    {
+        return $this->tklAstMisc;
+    }
+
+    public function setTklAstMisc(?float $tklAstMisc): SleeperStats
+    {
+        $this->tklAstMisc = $tklAstMisc;
+        return $this;
+    }
+
     public function getTklSolo(): ?float
     {
         return $this->tklSolo;
@@ -1451,6 +1867,17 @@ class SleeperStats
     public function setTklSolo(?float $tklSolo): SleeperStats
     {
         $this->tklSolo = $tklSolo;
+        return $this;
+    }
+
+    public function getTklSoloMisc(): ?float
+    {
+        return $this->tklSoloMisc;
+    }
+
+    public function setTklSoloMisc(?float $tklSoloMisc): SleeperStats
+    {
+        $this->tklSoloMisc = $tklSoloMisc;
         return $this;
     }
 
@@ -1484,6 +1911,17 @@ class SleeperStats
     public function setFf(?float $ff): SleeperStats
     {
         $this->ff = $ff;
+        return $this;
+    }
+
+    public function getFfMisc(): ?float
+    {
+        return $this->ffMisc;
+    }
+
+    public function setFfMisc(?float $ffMisc): SleeperStats
+    {
+        $this->ffMisc = $ffMisc;
         return $this;
     }
 
@@ -1608,6 +2046,28 @@ class SleeperStats
         return $this;
     }
 
+    public function getDefPr(): ?float
+    {
+        return $this->defPr;
+    }
+
+    public function setDefPr(?float $defPr): SleeperStats
+    {
+        $this->defPr = $defPr;
+        return $this;
+    }
+
+    public function getDefPrTd(): ?float
+    {
+        return $this->defPrTd;
+    }
+
+    public function setDefPrTd(?float $defPrTd): SleeperStats
+    {
+        $this->defPrTd = $defPrTd;
+        return $this;
+    }
+
     public function getDefPrYd(): ?float
     {
         return $this->defPrYd;
@@ -1619,6 +2079,50 @@ class SleeperStats
         return $this;
     }
 
+    public function getDefPrLng(): ?float
+    {
+        return $this->defPrLng;
+    }
+
+    public function setDefPrLng(?float $defPrLng): SleeperStats
+    {
+        $this->defPrLng = $defPrLng;
+        return $this;
+    }
+
+    public function getDefPrYpa(): ?float
+    {
+        return $this->defPrYpa;
+    }
+
+    public function setDefPrYpa(?float $defPrYpa): SleeperStats
+    {
+        $this->defPrYpa = $defPrYpa;
+        return $this;
+    }
+
+    public function getDefKr(): ?float
+    {
+        return $this->defKr;
+    }
+
+    public function setDefKr(?float $defKr): SleeperStats
+    {
+        $this->defKr = $defKr;
+        return $this;
+    }
+
+    public function getDefKrTd(): ?float
+    {
+        return $this->defKrTd;
+    }
+
+    public function setDefKrTd(?float $defKrTd): SleeperStats
+    {
+        $this->defKrTd = $defKrTd;
+        return $this;
+    }
+
     public function getDefKrYd(): ?float
     {
         return $this->defKrYd;
@@ -1627,6 +2131,28 @@ class SleeperStats
     public function setDefKrYd(?float $defKrYd): SleeperStats
     {
         $this->defKrYd = $defKrYd;
+        return $this;
+    }
+
+    public function getDefKrLng(): ?float
+    {
+        return $this->defKrLng;
+    }
+
+    public function setDefKrLng(?float $defKrLng): SleeperStats
+    {
+        $this->defKrLng = $defKrLng;
+        return $this;
+    }
+
+    public function getDefKrYpa(): ?float
+    {
+        return $this->defKrYpa;
+    }
+
+    public function setDefKrYpa(?float $defKrYpa): SleeperStats
+    {
+        $this->defKrYpa = $defKrYpa;
         return $this;
     }
 
@@ -1674,6 +2200,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getPr(): ?float
+    {
+        return $this->pr;
+    }
+
+    public function setPr(?float $pr): SleeperStats
+    {
+        $this->pr = $pr;
+        return $this;
+    }
+
     public function getPrYd(): ?float
     {
         return $this->prYd;
@@ -1682,6 +2219,61 @@ class SleeperStats
     public function setPrYd(?float $prYd): SleeperStats
     {
         $this->prYd = $prYd;
+        return $this;
+    }
+
+    public function getPrTd(): ?float
+    {
+        return $this->prTd;
+    }
+
+    public function setPrTd(?float $prTd): SleeperStats
+    {
+        $this->prTd = $prTd;
+        return $this;
+    }
+
+    public function getPrLng(): ?float
+    {
+        return $this->prLng;
+    }
+
+    public function setPrLng(?float $prLng): SleeperStats
+    {
+        $this->prLng = $prLng;
+        return $this;
+    }
+
+    public function getPrYpa(): ?float
+    {
+        return $this->prYpa;
+    }
+
+    public function setPrYpa(?float $prYpa): SleeperStats
+    {
+        $this->prYpa = $prYpa;
+        return $this;
+    }
+
+    public function getKr(): ?float
+    {
+        return $this->kr;
+    }
+
+    public function setKr(?float $kr): SleeperStats
+    {
+        $this->kr = $kr;
+        return $this;
+    }
+
+    public function getKrTd(): ?float
+    {
+        return $this->krTd;
+    }
+
+    public function setKrTd(?float $krTd): SleeperStats
+    {
+        $this->krTd = $krTd;
         return $this;
     }
 
@@ -1696,14 +2288,36 @@ class SleeperStats
         return $this;
     }
 
-    public function getPr(): ?float
+    public function getKrLng(): ?float
     {
-        return $this->pr;
+        return $this->krLng;
     }
 
-    public function setPr(?float $pr): SleeperStats
+    public function setKrLng(?float $krLng): SleeperStats
     {
-        $this->pr = $pr;
+        $this->krLng = $krLng;
+        return $this;
+    }
+
+    public function getKrYpa(): ?float
+    {
+        return $this->krYpa;
+    }
+
+    public function setKrYpa(?float $krYpa): SleeperStats
+    {
+        $this->krYpa = $krYpa;
+        return $this;
+    }
+
+    public function getTd(): ?float
+    {
+        return $this->td;
+    }
+
+    public function setTd(?float $td): SleeperStats
+    {
+        $this->td = $td;
         return $this;
     }
 
@@ -1737,6 +2351,28 @@ class SleeperStats
     public function setFumRecTd(?float $fumRecTd): SleeperStats
     {
         $this->fumRecTd = $fumRecTd;
+        return $this;
+    }
+
+    public function getAnytimeTds(): ?float
+    {
+        return $this->anytimeTds;
+    }
+
+    public function setAnytimeTds(?float $anytimeTds): SleeperStats
+    {
+        $this->anytimeTds = $anytimeTds;
+        return $this;
+    }
+
+    public function getFirstTd(): ?float
+    {
+        return $this->firstTd;
+    }
+
+    public function setFirstTd(?float $firstTd): SleeperStats
+    {
+        $this->firstTd = $firstTd;
         return $this;
     }
 
@@ -2122,6 +2758,83 @@ class SleeperStats
     public function setBonusDefFumTd50p(?float $bonusDefFumTd50p): SleeperStats
     {
         $this->bonusDefFumTd50p = $bonusDefFumTd50p;
+        return $this;
+    }
+
+    public function getFanPtsAllow(): ?float
+    {
+        return $this->fanPtsAllow;
+    }
+
+    public function setFanPtsAllow(?float $fanPtsAllow): SleeperStats
+    {
+        $this->fanPtsAllow = $fanPtsAllow;
+        return $this;
+    }
+
+    public function getFanPtsAllowDef(): ?float
+    {
+        return $this->fanPtsAllowDef;
+    }
+
+    public function setFanPtsAllowDef(?float $fanPtsAllowDef): SleeperStats
+    {
+        $this->fanPtsAllowDef = $fanPtsAllowDef;
+        return $this;
+    }
+
+    public function getFanPtsAllowK(): ?float
+    {
+        return $this->fanPtsAllowK;
+    }
+
+    public function setFanPtsAllowK(?float $fanPtsAllowK): SleeperStats
+    {
+        $this->fanPtsAllowK = $fanPtsAllowK;
+        return $this;
+    }
+
+    public function getFanPtsAllowQb(): ?float
+    {
+        return $this->fanPtsAllowQb;
+    }
+
+    public function setFanPtsAllowQb(?float $fanPtsAllowQb): SleeperStats
+    {
+        $this->fanPtsAllowQb = $fanPtsAllowQb;
+        return $this;
+    }
+
+    public function getFanPtsAllowRb(): ?float
+    {
+        return $this->fanPtsAllowRb;
+    }
+
+    public function setFanPtsAllowRb(?float $fanPtsAllowRb): SleeperStats
+    {
+        $this->fanPtsAllowRb = $fanPtsAllowRb;
+        return $this;
+    }
+
+    public function getFanPtsAllowTe(): ?float
+    {
+        return $this->fanPtsAllowTe;
+    }
+
+    public function setFanPtsAllowTe(?float $fanPtsAllowTe): SleeperStats
+    {
+        $this->fanPtsAllowTe = $fanPtsAllowTe;
+        return $this;
+    }
+
+    public function getFanPtsAllowWr(): ?float
+    {
+        return $this->fanPtsAllowWr;
+    }
+
+    public function setFanPtsAllowWr(?float $fanPtsAllowWr): SleeperStats
+    {
+        $this->fanPtsAllowWr = $fanPtsAllowWr;
         return $this;
     }
 }
