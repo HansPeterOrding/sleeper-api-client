@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace HansPeterOrding\SleeperApiClient\ApiClient;
 
+use HansPeterOrding\SleeperApiClient\ApiClient\Denormalizers\SleeperRosterMetadataDenormalizer;
 use Http\Client\Common\Plugin\ContentTypePlugin;
 use Http\Client\Common\Plugin\CookiePlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
@@ -41,6 +42,23 @@ class SleeperApiClientFactory
         $uriFactory = Psr17FactoryDiscovery::findUriFactory();
         $requestFactory = Psr17FactoryDiscovery::findRequestFactory();
 
+        $plugins = $this->getPlugins($logger);
+
+        $pluginClient = new PluginClient(
+            $client,
+            $plugins
+        );
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = $this->getNormalizers();
+
+        $serializer = new Serializer($normalizers, $encoders);
+
+        return new SleeperApiClient($sport, $pluginClient, $uriFactory, $requestFactory, $serializer);
+    }
+
+    private function getPlugins(?LoggerInterface $logger = null): iterable
+    {
         $plugins = [];
 
         if(null !== $logger) {
@@ -56,13 +74,15 @@ class SleeperApiClientFactory
             'retries' => 3
         ]);
 
-        $pluginClient = new PluginClient(
-            $client,
-            $plugins
-        );
+        return $plugins;
+    }
 
-        $encoders = [new JsonEncoder()];
-        $normalizers = [
+    private function getNormalizers()
+    {
+        $metadataDenormalizer = new SleeperRosterMetadataDenormalizer();
+
+        return [
+            $metadataDenormalizer,
             new DateTimeNormalizer(),
             new ObjectNormalizer(
                 null,
@@ -72,8 +92,5 @@ class SleeperApiClientFactory
             ),
             new ArrayDenormalizer()
         ];
-        $serializer = new Serializer($normalizers, $encoders);
-
-        return new SleeperApiClient($sport, $pluginClient, $uriFactory, $requestFactory, $serializer);
     }
 }

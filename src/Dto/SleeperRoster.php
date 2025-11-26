@@ -10,9 +10,12 @@ class SleeperRoster
     private string $leagueId;
     private ?array $starters = [];
     private ?array $reserve = [];
+    private ?array $keepers = [];
+    private ?array $taxi = [];
     private ?array $players = [];
     private ?array $coOwners = [];
     private SleeperRosterSettings $settings;
+    private SleeperRosterMetadata $metadata;
 
     public function getRosterId(): int
     {
@@ -69,6 +72,28 @@ class SleeperRoster
         return $this;
     }
 
+    public function getKeepers(): ?array
+    {
+        return $this->keepers;
+    }
+
+    public function setKeepers(?array $keepers): SleeperRoster
+    {
+        $this->keepers = $keepers;
+        return $this;
+    }
+
+    public function getTaxi(): ?array
+    {
+        return $this->taxi;
+    }
+
+    public function setTaxi(?array $taxi): SleeperRoster
+    {
+        $this->taxi = $taxi;
+        return $this;
+    }
+
     public function getPlayers(): ?array
     {
         return $this->players;
@@ -99,6 +124,17 @@ class SleeperRoster
     public function setSettings(SleeperRosterSettings $settings): SleeperRoster
     {
         $this->settings = $settings;
+        return $this;
+    }
+
+    public function getMetadata(): SleeperRosterMetadata
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(SleeperRosterMetadata $metadata): SleeperRoster
+    {
+        $this->metadata = $metadata;
         return $this;
     }
 }
