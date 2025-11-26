@@ -33,7 +33,7 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjections``
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperStats``
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
@@ -87,7 +87,7 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjections``
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperStats``
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 
@@ -134,7 +134,7 @@ Parameters
 Data transfer object
 ====================
 
-``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection``
+``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjections``
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerStats``
 ``HansPeterOrding\SleeperApiClient\Dto\SleeperPlayer``
 

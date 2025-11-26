@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace HansPeterOrding\SleeperApiClient\ApiClient\Endpoints;
 
 use HansPeterOrding\SleeperApiClient\ApiClient\SleeperApiClientInterface;
-use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjection;
+use HansPeterOrding\SleeperApiClient\Dto\SleeperPlayerProjections;
 
 class Projections extends AbstractEndpoint
 {
     /**
-     * @return SleeperPlayerProjection[]
+     * @return SleeperPlayerProjections[]
      */
     public function list(
         string     $season,
@@ -44,12 +44,12 @@ class Projections extends AbstractEndpoint
 
         return $this->sleeperApiClient->get(
             $url,
-            SleeperPlayerProjection::class . '[]'
+            SleeperPlayerProjections::class . '[]'
         );
     }
 
     /**
-     * @return SleeperPlayerProjection|null
+     * @return SleeperPlayerProjections|null
      */
     public function getForPlayer(
         string $playerId,
@@ -79,12 +79,12 @@ class Projections extends AbstractEndpoint
 
         return $this->sleeperApiClient->get(
             $url,
-            SleeperPlayerProjection::class
+            SleeperPlayerProjections::class
         );
     }
 
     /**
-     * @return SleeperPlayerProjection[]
+     * @return SleeperPlayerProjections[]
      */
     public function getWeeklyForPlayer(
         string $playerId,
@@ -109,7 +109,7 @@ class Projections extends AbstractEndpoint
 
         return $this->sleeperApiClient->get(
             $url,
-            SleeperPlayerProjection::class . '[]'
+            SleeperPlayerProjections::class . '[]'
         );
     }
 }
