@@ -121,6 +121,7 @@ class SleeperStats
     private ?float $fgm4049 = null;
     private ?float $fgm50p = null;
     private ?float $fgm5059 = null;
+    private ?float $fgm60p = null;
     private ?float $fgmLng = null;
     private ?float $fgmPct = null;
     private ?float $fgmYds = null;
@@ -136,7 +137,11 @@ class SleeperStats
     private ?float $fgmiss50p = null;
     private ?float $fgmiss5059 = null;
     private ?float $fgmiss60p = null;
+    private ?float $fgBlkd = null;
     private ?float $xpmiss = null;
+    private ?float $puntNetYd = null;
+    private ?float $puntYds = null;
+    private ?float $punts = null;
 
     // Team defense
     private ?float $defTd = null;
@@ -167,6 +172,8 @@ class SleeperStats
     private ?float $intRetYd = null;
     private ?float $fumRec = null;
     private ?float $fumRetYd = null;
+    private ?float $fumRecEzTds = null;
+    private ?float $miscRetYd = null;
     private ?float $tklLoss = null;
     private ?float $tklAst = null;
     private ?float $tklAstMisc = null;
@@ -200,8 +207,6 @@ class SleeperStats
     private ?float $defKrLng = null;
     private ?float $defKrYpa = null;
 
-
-
     // Special Teams Player
     private ?float $stTd = null;
     private ?float $stFf = null;
@@ -221,6 +226,7 @@ class SleeperStats
 
     // Misc
     private ?float $td = null;
+    private ?float $miscTd = null;
     private ?float $fum = null;
     private ?float $fumLost = null;
     private ?float $fumRecTd = null;
@@ -1342,6 +1348,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getFgm60p(): ?float
+    {
+        return $this->fgm60p;
+    }
+
+    public function setFgm60p(?float $fgm60p): SleeperStats
+    {
+        $this->fgm60p = $fgm60p;
+        return $this;
+    }
+
     public function getFgmLng(): ?float
     {
         return $this->fgmLng;
@@ -1507,6 +1524,17 @@ class SleeperStats
         return $this;
     }
 
+    public function getFgBlkd(): ?float
+    {
+        return $this->fgBlkd;
+    }
+
+    public function setFgBlkd(?float $fgBlkd): SleeperStats
+    {
+        $this->fgBlkd = $fgBlkd;
+        return $this;
+    }
+
     public function getXpmiss(): ?float
     {
         return $this->xpmiss;
@@ -1515,6 +1543,39 @@ class SleeperStats
     public function setXpmiss(?float $xpmiss): SleeperStats
     {
         $this->xpmiss = $xpmiss;
+        return $this;
+    }
+
+    public function getPuntNetYd(): ?float
+    {
+        return $this->puntNetYd;
+    }
+
+    public function setPuntNetYd(?float $puntNetYd): SleeperStats
+    {
+        $this->puntNetYd = $puntNetYd;
+        return $this;
+    }
+
+    public function getPuntYds(): ?float
+    {
+        return $this->puntYds;
+    }
+
+    public function setPuntYds(?float $puntYds): SleeperStats
+    {
+        $this->puntYds = $puntYds;
+        return $this;
+    }
+
+    public function getPunts(): ?float
+    {
+        return $this->punts;
+    }
+
+    public function setPunts(?float $punts): SleeperStats
+    {
+        $this->punts = $punts;
         return $this;
     }
 
@@ -1823,6 +1884,28 @@ class SleeperStats
     public function setFumRetYd(?float $fumRetYd): SleeperStats
     {
         $this->fumRetYd = $fumRetYd;
+        return $this;
+    }
+
+    public function getFumRecEzTds(): ?float
+    {
+        return $this->fumRecEzTds;
+    }
+
+    public function setFumRecEzTds(?float $fumRecEzTds): SleeperStats
+    {
+        $this->fumRecEzTds = $fumRecEzTds;
+        return $this;
+    }
+
+    public function getMiscRetYd(): ?float
+    {
+        return $this->miscRetYd;
+    }
+
+    public function setMiscRetYd(?float $miscRetYd): SleeperStats
+    {
+        $this->miscRetYd = $miscRetYd;
         return $this;
     }
 
@@ -2318,6 +2401,17 @@ class SleeperStats
     public function setTd(?float $td): SleeperStats
     {
         $this->td = $td;
+        return $this;
+    }
+
+    public function getMiscTd(): ?float
+    {
+        return $this->miscTd;
+    }
+
+    public function setMiscTd(?float $miscTd): SleeperStats
+    {
+        $this->miscTd = $miscTd;
         return $this;
     }
 
