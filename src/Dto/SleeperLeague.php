@@ -31,6 +31,14 @@ class SleeperLeague
 
     private ?string $avatar = null;
 
+    /**
+     * Only present on the user/{id}/leagues list response; null when a league is
+     * fetched directly via league/{id}. A value of -1 marks an archived league in
+     * the user's Sleeper list. Auto-mapped from the JSON field `display_order` by
+     * the CamelCaseToSnakeCaseNameConverter.
+     */
+    private ?int $displayOrder = null;
+
     public function __construct()
     {
         $this->settings = new SleeperLeagueSettings();
@@ -177,6 +185,17 @@ class SleeperLeague
     public function setAvatar(?string $avatar): SleeperLeague
     {
         $this->avatar = $avatar;
+        return $this;
+    }
+
+    public function getDisplayOrder(): ?int
+    {
+        return $this->displayOrder;
+    }
+
+    public function setDisplayOrder(?int $displayOrder): SleeperLeague
+    {
+        $this->displayOrder = $displayOrder;
         return $this;
     }
 }
