@@ -19,7 +19,7 @@ class SleeperLeague
 
     private SleeperLeagueScoringSettings $scoringSettings;
 
-    private array $rosterPositions = [];
+    private ?array $rosterPositions = null;
 
     private ?string $previousLeagueId = null;
 
@@ -124,10 +124,10 @@ class SleeperLeague
 
     public function getRosterPositions(): array
     {
-        return $this->rosterPositions;
+        return $this->rosterPositions ?? [];
     }
 
-    public function setRosterPositions(array $rosterPositions): SleeperLeague
+    public function setRosterPositions(?array $rosterPositions): SleeperLeague
     {
         $this->rosterPositions = $rosterPositions;
         return $this;

@@ -14,7 +14,7 @@ class SleeperRosterMetadata
     /**
      * @var array<string,string> playerId => nickname
      */
-    private array $playerNicknames = [];
+    private ?array $playerNicknames = null;
 
     public function getAllowPnInactiveStarters(): ?string
     {
@@ -82,18 +82,12 @@ class SleeperRosterMetadata
         return $this;
     }
 
-    /**
-     * @return array<string,string>
-     */
     public function getPlayerNicknames(): array
     {
-        return $this->playerNicknames;
+        return $this->playerNicknames ?? [];
     }
 
-    /**
-     * @param array<string,string> $playerNicknames
-     */
-    public function setPlayerNicknames(array $playerNicknames): self
+    public function setPlayerNicknames(?array $playerNicknames): SleeperRosterMetadata
     {
         $this->playerNicknames = $playerNicknames;
         return $this;

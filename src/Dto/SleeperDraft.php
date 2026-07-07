@@ -15,7 +15,7 @@ class SleeperDraft
 
     private string $sport;
 
-    private array $slotToRosterId;
+    private ?array $slotToRosterId = null;
 
     private SleeperDraftSettings $settings;
 
@@ -87,10 +87,10 @@ class SleeperDraft
 
     public function getSlotToRosterId(): array
     {
-        return $this->slotToRosterId;
+        return $this->slotToRosterId ?? [];
     }
 
-    public function setSlotToRosterId(array $slotToRosterId): SleeperDraft
+    public function setSlotToRosterId(?array $slotToRosterId): SleeperDraft
     {
         $this->slotToRosterId = $slotToRosterId;
         return $this;

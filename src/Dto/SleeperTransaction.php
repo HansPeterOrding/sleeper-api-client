@@ -28,9 +28,9 @@ class SleeperTransaction
     private ?array $drops;
 
     /**
-     * @var SleeperTradedPick[]
+     * @var ?SleeperTradedPick[]
      */
-    private array $draftPicks;
+    private ?array $draftPicks = null;
 
     private string $creator;
 
@@ -159,10 +159,10 @@ class SleeperTransaction
 
     public function getDraftPicks(): array
     {
-        return $this->draftPicks;
+        return $this->draftPicks ?? [];
     }
 
-    public function setDraftPicks(array $draftPicks): SleeperTransaction
+    public function setDraftPicks(?array $draftPicks): SleeperTransaction
     {
         $this->draftPicks = $draftPicks;
         return $this;
