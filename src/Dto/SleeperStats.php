@@ -41,6 +41,30 @@ class SleeperStats
     private ?float $posAdpDdPpr = null;
     private ?float $adpDdPpr = null;
 
+    private ?float $adp2qb = null;
+
+    private ?float $adpDynasty = null;
+
+    private ?float $adpDynasty2qb = null;
+
+    private ?float $adpDynastyHalfPpr = null;
+
+    private ?float $adpDynastyPpr = null;
+
+    private ?float $adpDynastyStd = null;
+
+    private ?float $adpHalfPpr = null;
+
+    private ?float $adpIdp = null;
+
+    private ?float $adpIdp1qb = null;
+
+    private ?float $adpPpr = null;
+
+    private ?float $adpRookie = null;
+
+    private ?float $adpStd = null;
+
     // Passing
     private ?float $passYd = null;
     private ?float $passYpa = null;
@@ -537,6 +561,138 @@ class SleeperStats
     public function getAdpDdPpr(): ?float
     {
         return $this->adpDdPpr;
+    }
+
+public function getAdp2qb(): ?float
+    {
+        return $this->adp2qb;
+    }
+
+    public function setAdp2qb(?float $adp2qb): SleeperStats
+    {
+        $this->adp2qb = $adp2qb;
+        return $this;
+    }
+
+    public function getAdpDynasty(): ?float
+    {
+        return $this->adpDynasty;
+    }
+
+    public function setAdpDynasty(?float $adpDynasty): SleeperStats
+    {
+        $this->adpDynasty = $adpDynasty;
+        return $this;
+    }
+
+    public function getAdpDynasty2qb(): ?float
+    {
+        return $this->adpDynasty2qb;
+    }
+
+    public function setAdpDynasty2qb(?float $adpDynasty2qb): SleeperStats
+    {
+        $this->adpDynasty2qb = $adpDynasty2qb;
+        return $this;
+    }
+
+    public function getAdpDynastyHalfPpr(): ?float
+    {
+        return $this->adpDynastyHalfPpr;
+    }
+
+    public function setAdpDynastyHalfPpr(?float $adpDynastyHalfPpr): SleeperStats
+    {
+        $this->adpDynastyHalfPpr = $adpDynastyHalfPpr;
+        return $this;
+    }
+
+    public function getAdpDynastyPpr(): ?float
+    {
+        return $this->adpDynastyPpr;
+    }
+
+    public function setAdpDynastyPpr(?float $adpDynastyPpr): SleeperStats
+    {
+        $this->adpDynastyPpr = $adpDynastyPpr;
+        return $this;
+    }
+
+    public function getAdpDynastyStd(): ?float
+    {
+        return $this->adpDynastyStd;
+    }
+
+    public function setAdpDynastyStd(?float $adpDynastyStd): SleeperStats
+    {
+        $this->adpDynastyStd = $adpDynastyStd;
+        return $this;
+    }
+
+    public function getAdpHalfPpr(): ?float
+    {
+        return $this->adpHalfPpr;
+    }
+
+    public function setAdpHalfPpr(?float $adpHalfPpr): SleeperStats
+    {
+        $this->adpHalfPpr = $adpHalfPpr;
+        return $this;
+    }
+
+    public function getAdpIdp(): ?float
+    {
+        return $this->adpIdp;
+    }
+
+    public function setAdpIdp(?float $adpIdp): SleeperStats
+    {
+        $this->adpIdp = $adpIdp;
+        return $this;
+    }
+
+    public function getAdpIdp1qb(): ?float
+    {
+        return $this->adpIdp1qb;
+    }
+
+    public function setAdpIdp1qb(?float $adpIdp1qb): SleeperStats
+    {
+        $this->adpIdp1qb = $adpIdp1qb;
+        return $this;
+    }
+
+    public function getAdpPpr(): ?float
+    {
+        return $this->adpPpr;
+    }
+
+    public function setAdpPpr(?float $adpPpr): SleeperStats
+    {
+        $this->adpPpr = $adpPpr;
+        return $this;
+    }
+
+    public function getAdpRookie(): ?float
+    {
+        return $this->adpRookie;
+    }
+
+    public function setAdpRookie(?float $adpRookie): SleeperStats
+    {
+        $this->adpRookie = $adpRookie;
+        return $this;
+    }
+
+    public function getAdpStd(): ?float
+    {
+        return $this->adpStd;
+    }
+
+    public function setAdpStd(?float $adpStd): SleeperStats
+    {
+        $this->adpStd = $adpStd;
+        return $this;
     }
 
     public function setAdpDdPpr(?float $adpDdPpr): SleeperStats
