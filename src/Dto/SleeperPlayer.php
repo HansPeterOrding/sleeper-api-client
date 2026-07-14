@@ -53,6 +53,8 @@ class SleeperPlayer
 
     private ?int $espnId = null;
 
+    private ?int $searchRank = null;
+
     private ?int $fantasyDataId = null;
 
     private ?string $gsisId = null;
@@ -307,6 +309,17 @@ class SleeperPlayer
     public function getEspnId(): ?int
     {
         return $this->espnId;
+    }
+
+    public function getSearchRank(): ?int
+    {
+        return $this->searchRank;
+    }
+
+    public function setSearchRank(?int $searchRank): SleeperPlayer
+    {
+        $this->searchRank = $searchRank;
+        return $this;
     }
 
     public function setEspnId(?int $espnId): SleeperPlayer
