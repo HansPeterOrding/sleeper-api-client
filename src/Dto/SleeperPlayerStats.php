@@ -21,7 +21,7 @@ class SleeperPlayerStats
 
     private ?string $playerId = null;
 
-    private ?SleeperPlayer $player;
+    private ?SleeperPlayer $player = null;
 
     private ?string $opponent = null;
 

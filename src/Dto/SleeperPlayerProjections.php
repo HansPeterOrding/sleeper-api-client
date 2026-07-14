@@ -7,9 +7,9 @@ use DateTime;
 
 class SleeperPlayerProjections
 {
-    private ?int $week;
+    private ?int $week = null;
 
-    private ?string $team;
+    private ?string $team = null;
 
     private SleeperStats $stats;
 
@@ -21,17 +21,17 @@ class SleeperPlayerProjections
 
     private string $playerId;
 
-    private SleeperPlayer $player;
+    private ?SleeperPlayer $player = null;
 
-    private ?string $opponent;
+    private ?string $opponent = null;
 
-    private ?string $gameId;
+    private ?string $gameId = null;
 
-    private ?DateTime $date;
+    private ?DateTime $date = null;
 
-    private ?string $company;
+    private ?string $company = null;
 
-    private ?string $category;
+    private ?string $category = null;
 
     public function __construct()
     {
@@ -115,12 +115,12 @@ class SleeperPlayerProjections
         return $this;
     }
 
-    public function getPlayer(): SleeperPlayer
+    public function getPlayer(): ?SleeperPlayer
     {
         return $this->player;
     }
 
-    public function setPlayer(SleeperPlayer $player): SleeperPlayerProjections
+    public function setPlayer(?SleeperPlayer $player): SleeperPlayerProjections
     {
         $this->player = $player;
         return $this;
