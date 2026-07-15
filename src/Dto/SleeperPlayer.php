@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-/** @todo: extend missing fields */
-
 namespace HansPeterOrding\SleeperApiClient\Dto;
 
 use DateTime;
@@ -74,6 +72,46 @@ class SleeperPlayer
     private ?int $yahooId = null;
 
     private ?string $injuryStatus = null;
+
+    private ?string $fullName = null;
+
+    private ?string $hashtag = null;
+
+    private ?string $searchFirstName = null;
+
+    private ?string $searchLastName = null;
+
+    private ?string $searchFullName = null;
+
+    private ?string $sport = null;
+
+    private ?string $playerShard = null;
+
+    private ?int $newsUpdated = null;
+
+    private ?string $injuryBodyPart = null;
+
+    private ?string $injuryNotes = null;
+
+    private ?string $injuryStartDate = null;
+
+    private ?string $practiceDescription = null;
+
+    private ?string $practiceParticipation = null;
+
+    private ?string $kalshiId = null;
+
+    private ?string $oddsjamId = null;
+
+    private ?string $optaId = null;
+
+    private ?string $teamAbbr = null;
+
+    private ?string $teamChangedAt = null;
+
+    private ?array $metadata = null;
+
+    private ?array $competitions = null;
 
     public function getPlayerId(): string
     {
@@ -435,6 +473,226 @@ class SleeperPlayer
     public function setInjuryStatus(?string $injuryStatus): SleeperPlayer
     {
         $this->injuryStatus = $injuryStatus;
+        return $this;
+    }
+
+    public function getFullName(): ?string
+    {
+        return $this->fullName;
+    }
+
+    public function setFullName(?string $fullName): SleeperPlayer
+    {
+        $this->fullName = $fullName;
+        return $this;
+    }
+
+    public function getHashtag(): ?string
+    {
+        return $this->hashtag;
+    }
+
+    public function setHashtag(?string $hashtag): SleeperPlayer
+    {
+        $this->hashtag = $hashtag;
+        return $this;
+    }
+
+    public function getSearchFirstName(): ?string
+    {
+        return $this->searchFirstName;
+    }
+
+    public function setSearchFirstName(?string $searchFirstName): SleeperPlayer
+    {
+        $this->searchFirstName = $searchFirstName;
+        return $this;
+    }
+
+    public function getSearchLastName(): ?string
+    {
+        return $this->searchLastName;
+    }
+
+    public function setSearchLastName(?string $searchLastName): SleeperPlayer
+    {
+        $this->searchLastName = $searchLastName;
+        return $this;
+    }
+
+    public function getSearchFullName(): ?string
+    {
+        return $this->searchFullName;
+    }
+
+    public function setSearchFullName(?string $searchFullName): SleeperPlayer
+    {
+        $this->searchFullName = $searchFullName;
+        return $this;
+    }
+
+    public function getSport(): ?string
+    {
+        return $this->sport;
+    }
+
+    public function setSport(?string $sport): SleeperPlayer
+    {
+        $this->sport = $sport;
+        return $this;
+    }
+
+    public function getPlayerShard(): ?string
+    {
+        return $this->playerShard;
+    }
+
+    public function setPlayerShard(?string $playerShard): SleeperPlayer
+    {
+        $this->playerShard = $playerShard;
+        return $this;
+    }
+
+    public function getNewsUpdated(): ?int
+    {
+        return $this->newsUpdated;
+    }
+
+    public function setNewsUpdated(?int $newsUpdated): SleeperPlayer
+    {
+        $this->newsUpdated = $newsUpdated;
+        return $this;
+    }
+
+    public function getInjuryBodyPart(): ?string
+    {
+        return $this->injuryBodyPart;
+    }
+
+    public function setInjuryBodyPart(?string $injuryBodyPart): SleeperPlayer
+    {
+        $this->injuryBodyPart = $injuryBodyPart;
+        return $this;
+    }
+
+    public function getInjuryNotes(): ?string
+    {
+        return $this->injuryNotes;
+    }
+
+    public function setInjuryNotes(?string $injuryNotes): SleeperPlayer
+    {
+        $this->injuryNotes = $injuryNotes;
+        return $this;
+    }
+
+    public function getInjuryStartDate(): ?string
+    {
+        return $this->injuryStartDate;
+    }
+
+    public function setInjuryStartDate(?string $injuryStartDate): SleeperPlayer
+    {
+        $this->injuryStartDate = $injuryStartDate;
+        return $this;
+    }
+
+    public function getPracticeDescription(): ?string
+    {
+        return $this->practiceDescription;
+    }
+
+    public function setPracticeDescription(?string $practiceDescription): SleeperPlayer
+    {
+        $this->practiceDescription = $practiceDescription;
+        return $this;
+    }
+
+    public function getPracticeParticipation(): ?string
+    {
+        return $this->practiceParticipation;
+    }
+
+    public function setPracticeParticipation(?string $practiceParticipation): SleeperPlayer
+    {
+        $this->practiceParticipation = $practiceParticipation;
+        return $this;
+    }
+
+    public function getKalshiId(): ?string
+    {
+        return $this->kalshiId;
+    }
+
+    public function setKalshiId(?string $kalshiId): SleeperPlayer
+    {
+        $this->kalshiId = $kalshiId;
+        return $this;
+    }
+
+    public function getOddsjamId(): ?string
+    {
+        return $this->oddsjamId;
+    }
+
+    public function setOddsjamId(?string $oddsjamId): SleeperPlayer
+    {
+        $this->oddsjamId = $oddsjamId;
+        return $this;
+    }
+
+    public function getOptaId(): ?string
+    {
+        return $this->optaId;
+    }
+
+    public function setOptaId(?string $optaId): SleeperPlayer
+    {
+        $this->optaId = $optaId;
+        return $this;
+    }
+
+    public function getTeamAbbr(): ?string
+    {
+        return $this->teamAbbr;
+    }
+
+    public function setTeamAbbr(?string $teamAbbr): SleeperPlayer
+    {
+        $this->teamAbbr = $teamAbbr;
+        return $this;
+    }
+
+    public function getTeamChangedAt(): ?string
+    {
+        return $this->teamChangedAt;
+    }
+
+    public function setTeamChangedAt(?string $teamChangedAt): SleeperPlayer
+    {
+        $this->teamChangedAt = $teamChangedAt;
+        return $this;
+    }
+
+    public function getMetadata(): ?array
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(?array $metadata): SleeperPlayer
+    {
+        $this->metadata = $metadata;
+        return $this;
+    }
+
+    public function getCompetitions(): ?array
+    {
+        return $this->competitions;
+    }
+
+    public function setCompetitions(?array $competitions): SleeperPlayer
+    {
+        $this->competitions = $competitions;
         return $this;
     }
 }
